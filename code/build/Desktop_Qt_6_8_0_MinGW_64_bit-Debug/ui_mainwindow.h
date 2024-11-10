@@ -45,8 +45,12 @@ public:
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
         stackedWidget->setGeometry(QRect(0, 0, 801, 601));
+        stackedWidget->setStyleSheet(QString::fromUtf8(""));
         mainMenuPage = new QWidget();
         mainMenuPage->setObjectName("mainMenuPage");
+        mainMenuPage->setStyleSheet(QString::fromUtf8("QWidget#mainMenuPage{\n"
+"	background-image: url(:/img/img/apocalypseBackground.jpg);\n"
+"}"));
         horizontalLayoutWidget = new QWidget(mainMenuPage);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
         horizontalLayoutWidget->setGeometry(QRect(240, 470, 301, 131));
@@ -60,6 +64,23 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(playGameButton->sizePolicy().hasHeightForWidth());
         playGameButton->setSizePolicy(sizePolicy);
+        playGameButton->setAutoFillBackground(false);
+        playGameButton->setStyleSheet(QString::fromUtf8("QWidget#playGameButton{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: green;\n"
+"	background-color: rgb(170, 255, 127);\n"
+"	font: 9px \"8514oem\";\n"
+"}\n"
+"\n"
+"QWidget#playGameButton::pressed{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: green;\n"
+"	background-color: rgb(0, 255, 0);\n"
+"	font: 9px \"8514oem\";\n"
+"}\n"
+""));
 
         horizontalLayout_3->addWidget(playGameButton);
 
@@ -72,6 +93,21 @@ public:
         sizePolicy1.setVerticalStretch(0);
         sizePolicy1.setHeightForWidth(tutorialButton->sizePolicy().hasHeightForWidth());
         tutorialButton->setSizePolicy(sizePolicy1);
+        tutorialButton->setStyleSheet(QString::fromUtf8("QWidget#tutorialButton{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: red;\n"
+"	background-color: rgb(255, 170, 127);\n"
+"	font: 9px \"8514oem\";\n"
+"}\n"
+"\n"
+"QWidget#tutorialButton::pressed{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: red;\n"
+"	background-color: rgb(255, 0, 127);\n"
+"	font: 9px \"8514oem\";\n"
+"}"));
 
         verticalLayout_3->addWidget(tutorialButton);
 
@@ -79,6 +115,21 @@ public:
         analyticsButton->setObjectName("analyticsButton");
         sizePolicy1.setHeightForWidth(analyticsButton->sizePolicy().hasHeightForWidth());
         analyticsButton->setSizePolicy(sizePolicy1);
+        analyticsButton->setStyleSheet(QString::fromUtf8("QWidget#analyticsButton{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: blue;\n"
+"	background-color: rgb(170, 170, 255);\n"
+"	font: 9px \"8514oem\";\n"
+"}\n"
+"\n"
+"QWidget#analyticsButton::pressed{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: blue;\n"
+"	background-color: rgb(0, 85, 255);\n"
+"	font: 9px \"8514oem\";\n"
+"}"));
 
         verticalLayout_3->addWidget(analyticsButton);
 
@@ -106,8 +157,8 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         playGameButton->setText(QCoreApplication::translate("MainWindow", "Play Game", nullptr));
-        tutorialButton->setText(QCoreApplication::translate("MainWindow", "View Tutorial", nullptr));
-        analyticsButton->setText(QCoreApplication::translate("MainWindow", "View Analytics", nullptr));
+        tutorialButton->setText(QCoreApplication::translate("MainWindow", "Tutorial", nullptr));
+        analyticsButton->setText(QCoreApplication::translate("MainWindow", "Analytics", nullptr));
     } // retranslateUi
 
 };

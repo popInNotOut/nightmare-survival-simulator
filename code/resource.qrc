@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/apocalypseBackground.jpg</file>
+    </qresource>
+</RCC>

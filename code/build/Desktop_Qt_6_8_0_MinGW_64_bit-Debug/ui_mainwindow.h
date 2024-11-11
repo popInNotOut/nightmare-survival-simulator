@@ -12,6 +12,7 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
@@ -31,7 +32,8 @@ public:
     QPushButton *playGameButton;
     QVBoxLayout *verticalLayout_3;
     QPushButton *tutorialButton;
-    QPushButton *analyticsButton;
+    QPushButton *highscoresButton;
+    QLabel *titleLabel;
     QWidget *tutorialPage;
     QWidget *analyticsPage;
 
@@ -48,6 +50,7 @@ public:
         stackedWidget->setStyleSheet(QString::fromUtf8(""));
         mainMenuPage = new QWidget();
         mainMenuPage->setObjectName("mainMenuPage");
+        mainMenuPage->setAutoFillBackground(false);
         mainMenuPage->setStyleSheet(QString::fromUtf8("QWidget#mainMenuPage{\n"
 "	background-image: url(:/img/img/apocalypseBackground.jpg);\n"
 "}"));
@@ -111,11 +114,11 @@ public:
 
         verticalLayout_3->addWidget(tutorialButton);
 
-        analyticsButton = new QPushButton(horizontalLayoutWidget);
-        analyticsButton->setObjectName("analyticsButton");
-        sizePolicy1.setHeightForWidth(analyticsButton->sizePolicy().hasHeightForWidth());
-        analyticsButton->setSizePolicy(sizePolicy1);
-        analyticsButton->setStyleSheet(QString::fromUtf8("QWidget#analyticsButton{\n"
+        highscoresButton = new QPushButton(horizontalLayoutWidget);
+        highscoresButton->setObjectName("highscoresButton");
+        sizePolicy1.setHeightForWidth(highscoresButton->sizePolicy().hasHeightForWidth());
+        highscoresButton->setSizePolicy(sizePolicy1);
+        highscoresButton->setStyleSheet(QString::fromUtf8("QWidget#highscoresButton{\n"
 "	border-width: 4px;\n"
 "	border-style: solid;\n"
 "	border-color: blue;\n"
@@ -123,7 +126,7 @@ public:
 "	font: 9px \"8514oem\";\n"
 "}\n"
 "\n"
-"QWidget#analyticsButton::pressed{\n"
+"QWidget#highscoresButton::pressed{\n"
 "	border-width: 4px;\n"
 "	border-style: solid;\n"
 "	border-color: blue;\n"
@@ -131,11 +134,21 @@ public:
 "	font: 9px \"8514oem\";\n"
 "}"));
 
-        verticalLayout_3->addWidget(analyticsButton);
+        verticalLayout_3->addWidget(highscoresButton);
 
 
         horizontalLayout_3->addLayout(verticalLayout_3);
 
+        titleLabel = new QLabel(mainMenuPage);
+        titleLabel->setObjectName("titleLabel");
+        titleLabel->setGeometry(QRect(30, 30, 481, 81));
+        titleLabel->setStyleSheet(QString::fromUtf8("QLabel#titleLabel{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: rgb(230, 230, 230);\n"
+"	font: 18pt \"Snap ITC\";\n"
+"}"));
         stackedWidget->addWidget(mainMenuPage);
         tutorialPage = new QWidget();
         tutorialPage->setObjectName("tutorialPage");
@@ -158,7 +171,8 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         playGameButton->setText(QCoreApplication::translate("MainWindow", "Play Game", nullptr));
         tutorialButton->setText(QCoreApplication::translate("MainWindow", "Tutorial", nullptr));
-        analyticsButton->setText(QCoreApplication::translate("MainWindow", "Analytics", nullptr));
+        highscoresButton->setText(QCoreApplication::translate("MainWindow", "Highscores", nullptr));
+        titleLabel->setText(QCoreApplication::translate("MainWindow", "End of World Survival Simulator", nullptr));
     } // retranslateUi
 
 };

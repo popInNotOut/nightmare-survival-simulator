@@ -30,6 +30,9 @@
      <number>0</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
      <property name="styleSheet">
       <string notr="true">QWidget#mainMenuPage{
 	background-image: url(:/img/img/apocalypseBackground.jpg);
@@ -112,7 +115,7 @@ QWidget#tutorialButton::pressed{
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="analyticsButton">
+          <widget class="QPushButton" name="highscoresButton">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
              <horstretch>0</horstretch>
@@ -120,7 +123,7 @@ QWidget#tutorialButton::pressed{
             </sizepolicy>
            </property>
            <property name="styleSheet">
-            <string notr="true">QWidget#analyticsButton{
+            <string notr="true">QWidget#highscoresButton{
 	border-width: 4px;
 	border-style: solid;
 	border-color: blue;
@@ -128,7 +131,7 @@ QWidget#tutorialButton::pressed{
 	font: 9px &quot;8514oem&quot;;
 }
 
-QWidget#analyticsButton::pressed{
+QWidget#highscoresButton::pressed{
 	border-width: 4px;
 	border-style: solid;
 	border-color: blue;
@@ -137,13 +140,35 @@ QWidget#analyticsButton::pressed{
 }</string>
            </property>
            <property name="text">
-            <string>Analytics</string>
+            <string>Highscores</string>
            </property>
           </widget>
          </item>
         </layout>
        </item>
       </layout>
+     </widget>
+     <widget class="QLabel" name="titleLabel">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>481</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#titleLabel{
+	border-width: 4px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(230, 230, 230);
+	font: 18pt &quot;Snap ITC&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>End of World Survival Simulator</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="tutorialPage"/>

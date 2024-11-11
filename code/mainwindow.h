@@ -18,7 +18,7 @@ public:
     ~MainWindow();
 
 private slots:
-
+    void on_playGameButton_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1034</width>
-    <height>670</height>
+    <width>1044</width>
+    <height>677</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,8 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>991</width>
-     <height>631</height>
+     <width>1001</width>
+     <height>641</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -51,9 +51,9 @@
      <property name="geometry">
       <rect>
        <x>670</x>
-       <y>510</y>
+       <y>520</y>
        <width>311</width>
-       <height>101</height>
+       <height>91</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -108,17 +108,17 @@ QWidget#backToMainMenuButton::pressed{
       <string>Back to Main Menu</string>
      </property>
     </widget>
-    <widget class="QLabel" name="selectBlocksLabel">
+    <widget class="QLabel" name="selectBlocksOuterLabel">
      <property name="geometry">
       <rect>
        <x>670</x>
        <y>70</y>
        <width>311</width>
-       <height>191</height>
+       <height>221</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">QLabel#selectBlocksLabel{
+      <string notr="true">QLabel#selectBlocksOuterLabel{
 	background-color: black;
 }</string>
      </property>
@@ -129,58 +129,356 @@ QWidget#backToMainMenuButton::pressed{
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QLabel" name="selectDisasterLabel">
-     <property name="geometry">
-      <rect>
-       <x>670</x>
-       <y>320</y>
-       <width>311</width>
-       <height>181</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QLabel#selectDisasterLabel{
-	background-color: rgb(0, 0, 0);
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="errorMessageLabel">
-     <property name="geometry">
-      <rect>
-       <x>670</x>
-       <y>270</y>
-       <width>311</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
     <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
        <x>680</x>
        <y>80</y>
-       <width>291</width>
-       <height>171</height>
+       <width>293</width>
+       <height>201</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout"/>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QLabel" name="placeBlocksLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#placeBlocksLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: rgb(0, 255, 0);
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Place Blocks</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="budgetLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#budgetLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: rgb(255, 0, 0);
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>(Show Budget)</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="grassLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#grassLabel{
+	background-color: white;
+	font: 600 9pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Grass ($5)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="grassImageLabel">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="grassCheckBox">
+          <property name="text">
+           <string>CheckBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QLabel" name="woodLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#woodLabel{
+	background-color: white;
+	font: 600 9pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Wood ($10)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="woodImageLabel">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="woodCheckBox">
+          <property name="text">
+           <string>CheckBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <item>
+         <widget class="QLabel" name="cobblestoneLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#cobblestoneLabel{
+	background-color: white;
+	font: 600 9pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Cobblestone ($15)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="cobblestoneImageLabel">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="cobblestoneCheckBox">
+          <property name="text">
+           <string>CheckBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5">
+        <item>
+         <widget class="QLabel" name="concreteLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#concreteLabel{
+	background-color: white;
+	font: 600 9pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Concrete ($20)</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="concreteImageLabel">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="concreteCheckBox">
+          <property name="text">
+           <string>CheckBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLabel" name="selectDisasterOuterLabel">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>300</y>
+       <width>311</width>
+       <height>211</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#selectDisasterOuterLabel{
+	background-color: black;
+}</string>
+     </property>
+     <property name="text">
+      <string>TextLabel</string>
+     </property>
     </widget>
     <widget class="QWidget" name="verticalLayoutWidget_2">
      <property name="geometry">
       <rect>
        <x>680</x>
-       <y>330</y>
+       <y>310</y>
        <width>291</width>
-       <height>161</height>
+       <height>191</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3"/>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="selectDisasterLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel#selectDisasterLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: rgb(0, 0, 255);
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+        </property>
+        <property name="text">
+         <string>Select Disaster</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QLabel" name="floodLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#floodLabel{
+	background-color: white;
+	font: 600 15pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Flood</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="floodImageLabel">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+          <property name="scaledContents">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="floodCheckBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
+          </property>
+          <property name="text">
+           <string>CheckBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <item>
+         <widget class="QLabel" name="wildfireLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#wildfireLabel{
+	background-color: white;
+	font: 600 14pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Wildfire</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="wildfireImageLabel">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="wildfireCheckBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>CheckBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="QLabel" name="tornadoLabel">
+          <property name="styleSheet">
+           <string notr="true">QLabel#tornadoLabel{
+	background-color: white;
+	font: 600 14pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+          </property>
+          <property name="text">
+           <string>Tornado</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="tornadoImageLabel">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="tornadoCheckBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>CheckBox</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="simulationPage">

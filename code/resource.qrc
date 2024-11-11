@@ -5,6 +5,13 @@
         <file>img/terrorist.jpg</file>
         <file>img/player.png</file>
         <file>img/apocalypseBackgroundGameWindow.jpg</file>
+        <file>img/flood.jpg</file>
+        <file>img/tornado.jpg</file>
+        <file>img/wildfire.jpg</file>
+        <file>img/cobblestoneBlock.png</file>
+        <file>img/concreteBlock.png</file>
+        <file>img/grassBlock.png</file>
+        <file>img/woodBlock.png</file>
     </qresource>
     <qresource prefix="/objects"/>
 </RCC>

@@ -11,11 +11,13 @@ CONFIG += c++17
 SOURCES += \
     gamewindow.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    objects.cpp
 
 HEADERS += \
     gamewindow.h \
-    mainwindow.h
+    mainwindow.h \
+    objects.h
 
 FORMS += \
     gamewindow.ui \

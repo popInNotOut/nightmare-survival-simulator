@@ -2,6 +2,8 @@
 #define GAMEWINDOW_H
 
 #include <QDialog>
+#include <QPixMap>
+#include "objects.h"
 
 namespace Ui {
 class GameWindow;
@@ -34,10 +36,9 @@ private slots:
 
 private:
     Ui::GameWindow *ui;
-    void *gridCells[15][15];
-    void setUpGrid();
-    QWidget *mainMenuWidget;
-    int budget;
+    QPixmap grassPic, woodPic, cobblestonePic, concretePic; QPixmap playerPic, robberPic, terroristPic; QPixmap floodPic, wildfirePic, tornadoPic;
+    EntityFacade *gameState;
+    void init(), initGridCells(), updateGridToMatchGameState(), buttonClickedEvent(int r, int c);
 };
 
 #endif // GAMEWINDOW_H

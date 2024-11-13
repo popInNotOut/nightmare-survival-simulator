@@ -70,6 +70,7 @@ public:
     QLabel *tornadoLabel;
     QLabel *tornadoImageLabel;
     QCheckBox *tornadoCheckBox;
+    QPushButton *resetButton;
     QWidget *simulationPage;
     QWidget *gameOverPage;
 
@@ -98,13 +99,13 @@ public:
         grid->setContentsMargins(0, 0, 0, 0);
         finishButton = new QPushButton(buildPage);
         finishButton->setObjectName("finishButton");
-        finishButton->setGeometry(QRect(670, 520, 311, 91));
+        finishButton->setGeometry(QRect(830, 520, 151, 91));
         finishButton->setStyleSheet(QString::fromUtf8("QWidget#finishButton{\n"
 "	border-width: 4px;\n"
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
-"	font: 30pt \"Algerian\";\n"
+"	font: 25pt \"Algerian\";\n"
 "}\n"
 "\n"
 "QWidget#finishButton::pressed{\n"
@@ -112,7 +113,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
-"	font: 30pt \"Algerian\";\n"
+"	font: 25pt \"Algerian\";\n"
 "}\n"
 ""));
         backToMainMenuButton = new QPushButton(buildPage);
@@ -393,6 +394,25 @@ public:
 
         verticalLayout_2->addLayout(horizontalLayout_8);
 
+        resetButton = new QPushButton(buildPage);
+        resetButton->setObjectName("resetButton");
+        resetButton->setGeometry(QRect(670, 520, 151, 91));
+        resetButton->setStyleSheet(QString::fromUtf8("QWidget#resetButton{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: rgb(225, 225, 225);\n"
+"	font: 25pt \"Algerian\";\n"
+"}\n"
+"\n"
+"QWidget#resetButton::pressed{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: rgb(182, 182, 182);\n"
+"	font: 25pt \"Algerian\";\n"
+"}\n"
+""));
         stackedWidget->addWidget(buildPage);
         simulationPage = new QWidget();
         simulationPage->setObjectName("simulationPage");
@@ -443,6 +463,7 @@ public:
         tornadoLabel->setText(QCoreApplication::translate("GameWindow", "Tornado", nullptr));
         tornadoImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
         tornadoCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
+        resetButton->setText(QCoreApplication::translate("GameWindow", "RESET", nullptr));
     } // retranslateUi
 
 };

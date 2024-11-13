@@ -50,9 +50,9 @@
     <widget class="QPushButton" name="finishButton">
      <property name="geometry">
       <rect>
-       <x>670</x>
+       <x>830</x>
        <y>520</y>
-       <width>311</width>
+       <width>151</width>
        <height>91</height>
       </rect>
      </property>
@@ -62,7 +62,7 @@
 	border-style: solid;
 	border-color: black;
 	background-color: rgb(225, 225, 225);
-	font: 30pt &quot;Algerian&quot;;
+	font: 25pt &quot;Algerian&quot;;
 }
 
 QWidget#finishButton::pressed{
@@ -70,7 +70,7 @@ QWidget#finishButton::pressed{
 	border-style: solid;
 	border-color: black;
 	background-color: rgb(182, 182, 182);
-	font: 30pt &quot;Algerian&quot;;
+	font: 25pt &quot;Algerian&quot;;
 }
 </string>
      </property>
@@ -479,6 +479,37 @@ QWidget#backToMainMenuButton::pressed{
        </layout>
       </item>
      </layout>
+    </widget>
+    <widget class="QPushButton" name="resetButton">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>520</y>
+       <width>151</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#resetButton{
+	border-width: 4px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(225, 225, 225);
+	font: 25pt &quot;Algerian&quot;;
+}
+
+QWidget#resetButton::pressed{
+	border-width: 4px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(182, 182, 182);
+	font: 25pt &quot;Algerian&quot;;
+}
+</string>
+     </property>
+     <property name="text">
+      <string>RESET</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="simulationPage">

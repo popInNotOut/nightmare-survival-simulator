@@ -34,11 +34,13 @@ private slots:
 
     void on_tornadoCheckBox_stateChanged(int arg1);
 
+    void on_resetButton_clicked();
+
 private:
     Ui::GameWindow *ui;
     QPixmap grassPic, woodPic, cobblestonePic, concretePic; QPixmap playerPic, robberPic, terroristPic; QPixmap floodPic, wildfirePic, tornadoPic;
     EntityFacade *gameState;
-    void init(), initGridCells(), updateGridToMatchGameState(), buttonClickedEvent(int r, int c);
+    void init(), initGridCells(), updateGridToMatchGameState(), gridButtonClickedEvent(int r, int c);
 };
 
 #endif // GAMEWINDOW_H

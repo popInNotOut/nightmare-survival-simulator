@@ -57,7 +57,7 @@ void GameWindow::initGridCells(){
         for (int column = 0; column < gameState->NUM_OF_GRID_COLUMNS; column++){
             ui->grid->addWidget(new QPushButton(),row,column);
             connect(qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget()), &QPushButton::clicked, [=](){
-                buttonClickedEvent(row, column);
+                gridButtonClickedEvent(row, column);
             });
         }
     }
@@ -105,7 +105,7 @@ void GameWindow::updateGridToMatchGameState(){
     }
 }
 
-void GameWindow::buttonClickedEvent(int r, int c){
+void GameWindow::gridButtonClickedEvent(int r, int c){
     if (!gameState->isCellEmpty({r,c})){
         QMessageBox::warning(this,"Place Block Error","You cannot place a block there");
         return;
@@ -215,5 +215,21 @@ void GameWindow::on_tornadoCheckBox_stateChanged(int arg1)
         ui->floodCheckBox->setChecked(false);
         ui->wildfireCheckBox->setChecked(false);
     }
+}
+
+
+void GameWindow::on_resetButton_clicked()
+{
+    ui->grassCheckBox->setChecked(false);
+    ui->woodCheckBox->setChecked(false);
+    ui->cobblestoneCheckBox->setChecked(false);
+    ui->concreteCheckBox->setChecked(false);
+    ui->floodCheckBox->setChecked(false);
+    ui->wildfireCheckBox->setChecked(false);
+    ui->tornadoCheckBox->setChecked(false);
+    gameState->initBuildingPhase();
+    gameState->setBudget(100);
+    updateGridToMatchGameState();
+    ui->budgetLabel->setText(QString::fromStdString("Budget = " + std::to_string(gameState->getBudget())));
 }
 

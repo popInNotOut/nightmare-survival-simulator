@@ -667,6 +667,13 @@ QWidget#resetButton::pressed{
       </item>
       <item>
        <widget class="QLabel" name="survivalTimeLabel">
+        <property name="styleSheet">
+         <string notr="true">QLabel#survivalTimeLabel{
+	background-color: white;
+	font: 600 14pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -765,6 +772,76 @@ QWidget#resetButton::pressed{
 	background-image: url(:/img/img/gameOverPageBackground.jpg);
 }</string>
     </property>
+    <widget class="QLabel" name="causeOfDeathLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>981</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#causeOfDeathLabel{
+	background-color: white;
+	font: 600 15pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="gameOverSurvivalTimeLabel">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>150</y>
+       <width>911</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#gameOverSurvivalTimeLabel{
+	background-color: white;
+	font: 600 15pt &quot;Segoe UI Semibold&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="gameOverPageBackToMainMenuButton">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>520</y>
+       <width>301</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QWidget#gameOverPageBackToMainMenuButton{
+	border-width: 4px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(225, 225, 225);
+	font: 15pt &quot;Algerian&quot;;
+}
+
+QWidget#gameOverPageBackToMainMenuButton::pressed{
+	border-width: 4px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(182, 182, 182);
+	font: 15pt &quot;Algerian&quot;;
+}</string>
+     </property>
+     <property name="text">
+      <string>Back to Main Menu</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

@@ -152,7 +152,7 @@ void EntityFacade::initSimulationPhase(){
             }
         }
     }
-    // due to the budget, cost of the minimum block type, and number of cells on the edge of grid, there is guaranteed to be >= 3 available cells
+    // there is guaranteed to be >= 3 available cells due to: the budget, cost of the minimum block type, number of persons on the grid, and number of cells on the edge of grid
     std::random_device rd; std::mt19937 g(rd());
     std::shuffle(emptyCellsOnEdgeOfGrid.begin(), emptyCellsOnEdgeOfGrid.end(),g);
     std::pair<int,int> robberStartingLocation = emptyCellsOnEdgeOfGrid[0], terroristStartingLocation = emptyCellsOnEdgeOfGrid[1], disasterStartingLocation = emptyCellsOnEdgeOfGrid[2];
@@ -221,9 +221,11 @@ void EntityFacade::setDisasterType(EntityType type){
     if (type == EntityType::TORNADO) disaster = new Tornado();
 }
 EntityType EntityFacade::getDisasterType(){ return disasterType; }
+void EntityFacade::setEnemyMoveSpeedInMilliseconds(int newMoveSpeed){ enemyMoveSpeedInMilliseconds = newMoveSpeed; }
+int EntityFacade::getEnemyMoveSpeedInMilliseconds(){ return enemyMoveSpeedInMilliseconds; }
 
 void EntityFacade::movePlayer(int dr, int dc){
-    std::cout << gameOverStatus << " " << cause_of_death << std::endl;
+    // std::cout << gameOverStatus << " " << cause_of_death << std::endl;
     if (gameOver()) return;
     std::pair<int,int> currentPlayerLocation = player->getLocation();
     int r = currentPlayerLocation.first, c = currentPlayerLocation.second;
@@ -252,10 +254,11 @@ void EntityFacade::moveEnemy(){
     int move[4][2] = {{-1,0},{1,0},{0,-1},{0,1}};
 
     if (moveLoop[moveLoopIndex] == "D"){ // move disaster
-        std::vector<std::pair<int,int>> toAdd;
+        std::vector<std::pair<int,int>> toAdd; bool hasDisaster = false;
         for (int i = 0; i < NUM_OF_GRID_ROWS; i++){
             for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
                 if (gridData[i][j].second != disasterType) continue;
+                hasDisaster = true;
                 std::vector<std::pair<int,int>> candidateCells = disaster->disperse({i,j});
                 for (std::pair<int,int> p : candidateCells) {
                     if (isCellAvailable(p)){
@@ -274,6 +277,9 @@ void EntityFacade::moveEnemy(){
         }
         for (std::pair<int,int> p : toAdd) {
             updateCell({p.first,p.second}, disasterType);
+        }
+        if (!hasDisaster){
+            respawnDisaster();
         }
     }
 
@@ -307,12 +313,22 @@ void EntityFacade::moveEnemy(){
                 respawnRobber();
             }
         }
-        else {
-            int randomMove = std::rand()%4;
-            int nr = robberLocation.first + move[randomMove][0], nc = robberLocation.second + move[randomMove][1];
-            if (isCellInBounds({nr,nc}) && gridData[nr][nc].second != EntityType::TERRORIST && gridData[nr][nc].second != EntityType::PLAYER){
-                updateCell(robberLocation, EntityType::EMPTY); updateCell({nr,nc}, EntityType::ROBBER);
+        else { // if theres no more blocks left, the robber will move towards the player
+            int chosenR = robberLocation.first, chosenC = robberLocation.second;
+            std::pair<int,int> playerLocation = player->getLocation();
+            int playerDist = abs(robberLocation.first-playerLocation.first)+abs(robberLocation.second-playerLocation.second);
+            for (int i = 0; i < 4; i++){
+                int nr = robberLocation.first + move[i][0], nc = robberLocation.second + move[i][1];
+                if (isCellInBounds({nr,nc})){
+                    if (gridData[nr][nc].second == EntityType::TERRORIST) continue;
+                    if (gridData[nr][nc].second == EntityType::PLAYER) {
+                        gameOverStatus = true; cause_of_death = "Cause of death: the robber targeted you after he ran out of blocks to steal"; return;
+                    }
+                    if (abs(nr-playerLocation.first)+abs(nc-playerLocation.second) != playerDist-1) continue;
+                    chosenR = nr; chosenC = nc; break;
+                }
             }
+            updateCell(robberLocation, EntityType::EMPTY); updateCell({chosenR,chosenC},EntityType::ROBBER);
         }
     }
 
@@ -335,6 +351,7 @@ void EntityFacade::moveEnemy(){
         updateCell(terroristLocation, EntityType::EMPTY); updateCell({chosenR,chosenC},EntityType::TERRORIST);
     }
 
+    setEnemyMoveSpeedInMilliseconds(std::max(150,(int)(enemyMoveSpeedInMilliseconds*0.95)));
     moveLoopIndex = (moveLoopIndex+1)%std::size(moveLoop);
 }
 
@@ -352,7 +369,23 @@ void EntityFacade::respawnRobber(){
     updateCell(availableCellsOnEdgeOfGrid[0], EntityType::ROBBER);
 }
 
+void EntityFacade::respawnDisaster(){ // this is used in the rare case the robber or terrorist eats up all the disaster cells
+    std::vector<std::pair<int,int>> emptyCellsOnEdgeOfGrid;
+    for (int i = 0; i < NUM_OF_GRID_ROWS; i++){
+        for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
+            if ((i == 0 || j == 0 || i == NUM_OF_GRID_ROWS-1 || j == NUM_OF_GRID_COLUMNS-1) && gridData[i][j].second == EntityType::EMPTY){
+                emptyCellsOnEdgeOfGrid.push_back({i,j});
+            }
+        }
+    }
+    std::random_device rd; std::mt19937 g(rd());
+    std::shuffle(emptyCellsOnEdgeOfGrid.begin(), emptyCellsOnEdgeOfGrid.end(),g);
+    // there is guaranteed to be >= 1 available cells due to: the budget, cost of the minimum block type, number of persons on the grid, and number of cells on the edge of grid
+    updateCell({emptyCellsOnEdgeOfGrid[0]}, disasterType);
+}
+
 bool EntityFacade::gameOver(){ return gameOverStatus; }
+std::string EntityFacade::getCauseOfDeath(){ return cause_of_death; }
 /*******************************************************************************************************
 ********************************** End of EntityFacade *************************************************
 *******************************************************************************************************/

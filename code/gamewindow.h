@@ -5,6 +5,7 @@
 #include <QPixMap>
 #include <QGridLayout>
 #include <QKeyEvent>
+#include <QTimer>
 #include "objects.h"
 
 namespace Ui {
@@ -40,6 +41,12 @@ private slots:
 
     void on_finishButton_clicked();
 
+    void on_gameOverPageBackToMainMenuButton_clicked();
+
+public slots:
+    void timeoutFunction();
+    void updateSurvivalTimeFunction();
+
 private:
     Ui::GameWindow *ui;
     QPixmap grassPic, woodPic, cobblestonePic, concretePic; QPixmap playerPic, robberPic, terroristPic; QPixmap floodPic, wildfirePic, tornadoPic;
@@ -47,6 +54,9 @@ private:
     EntityFacade *gameState;
     void init(), initGridCellsForBuildingGrid(), initGridCellsForSimulationGrid(), updateGridToMatchGameState(QGridLayout *selectedGrid), gridButtonClickedEvent(int r, int c);
     void keyPressEvent(QKeyEvent *e) override, keyReleaseEvent(QKeyEvent *e) override;
+    void gameOverTransition();
+    QTimer *timer, *survivalTimeTimer; QElapsedTimer *survivalTimeValueTimer;
+    double survivedTimeInSeconds;
 };
 
 #endif // GAMEWINDOW_H

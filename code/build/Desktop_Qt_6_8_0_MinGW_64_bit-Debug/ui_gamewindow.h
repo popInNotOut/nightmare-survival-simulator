@@ -98,6 +98,9 @@ public:
     QLabel *rightArrowKeyLabel;
     QLabel *useArrowKeysToMoveLabel;
     QWidget *gameOverPage;
+    QLabel *causeOfDeathLabel;
+    QLabel *gameOverSurvivalTimeLabel;
+    QPushButton *gameOverPageBackToMainMenuButton;
 
     void setupUi(QDialog *GameWindow)
     {
@@ -554,6 +557,11 @@ public:
 
         survivalTimeLabel = new QLabel(verticalLayoutWidget_4);
         survivalTimeLabel->setObjectName("survivalTimeLabel");
+        survivalTimeLabel->setStyleSheet(QString::fromUtf8("QLabel#survivalTimeLabel{\n"
+"	background-color: white;\n"
+"	font: 600 14pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
 
         survivalTimeVerticalLayout->addWidget(survivalTimeLabel);
 
@@ -586,6 +594,40 @@ public:
         gameOverPage->setObjectName("gameOverPage");
         gameOverPage->setStyleSheet(QString::fromUtf8("QWidget#gameOverPage{\n"
 "	background-image: url(:/img/img/gameOverPageBackground.jpg);\n"
+"}"));
+        causeOfDeathLabel = new QLabel(gameOverPage);
+        causeOfDeathLabel->setObjectName("causeOfDeathLabel");
+        causeOfDeathLabel->setGeometry(QRect(10, 10, 981, 131));
+        causeOfDeathLabel->setStyleSheet(QString::fromUtf8("QLabel#causeOfDeathLabel{\n"
+"	background-color: white;\n"
+"	font: 600 15pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        gameOverSurvivalTimeLabel = new QLabel(gameOverPage);
+        gameOverSurvivalTimeLabel->setObjectName("gameOverSurvivalTimeLabel");
+        gameOverSurvivalTimeLabel->setGeometry(QRect(40, 150, 911, 71));
+        gameOverSurvivalTimeLabel->setStyleSheet(QString::fromUtf8("QLabel#gameOverSurvivalTimeLabel{\n"
+"	background-color: white;\n"
+"	font: 600 15pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        gameOverPageBackToMainMenuButton = new QPushButton(gameOverPage);
+        gameOverPageBackToMainMenuButton->setObjectName("gameOverPageBackToMainMenuButton");
+        gameOverPageBackToMainMenuButton->setGeometry(QRect(10, 520, 301, 111));
+        gameOverPageBackToMainMenuButton->setStyleSheet(QString::fromUtf8("QWidget#gameOverPageBackToMainMenuButton{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: rgb(225, 225, 225);\n"
+"	font: 15pt \"Algerian\";\n"
+"}\n"
+"\n"
+"QWidget#gameOverPageBackToMainMenuButton::pressed{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: rgb(182, 182, 182);\n"
+"	font: 15pt \"Algerian\";\n"
 "}"));
         stackedWidget->addWidget(gameOverPage);
 
@@ -641,6 +683,9 @@ public:
         downArrowKeyLabel->setText(QString());
         rightArrowKeyLabel->setText(QString());
         useArrowKeysToMoveLabel->setText(QCoreApplication::translate("GameWindow", "Use Arrow Keys to Move", nullptr));
+        causeOfDeathLabel->setText(QString());
+        gameOverSurvivalTimeLabel->setText(QString());
+        gameOverPageBackToMainMenuButton->setText(QCoreApplication::translate("GameWindow", "Back to Main Menu", nullptr));
     } // retranslateUi
 
 };

@@ -295,7 +295,10 @@ void GameWindow::keyReleaseEvent(QKeyEvent *event)
         ui->rightArrowKeyLabel->show();
         ui->downArrowKeyLabel->show();
     }
-    gameState->moveEnemy();
+    if (gameState->gameOver()){
+        gameOverTransition();
+        return;
+    }
     updateGridToMatchGameState(ui->simulationGrid);
 }
 
@@ -338,5 +341,42 @@ void GameWindow::on_finishButton_clicked()
     else if (gameState->getDisasterType() == EntityType::TORNADO) ui->disasterImageLabel->setPixmap(tornadoPic.scaled(w,h,Qt::KeepAspectRatio));
 
     initGridCellsForSimulationGrid(); gameState->initSimulationPhase(); updateGridToMatchGameState(ui->simulationGrid);
+
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(timeoutFunction()));
+    timer->start(gameState->getEnemyMoveSpeedInMilliseconds());
+
+    survivalTimeTimer = new QTimer(this); survivalTimeValueTimer = new QElapsedTimer();
+    connect(survivalTimeTimer, SIGNAL(timeout()), this, SLOT(updateSurvivalTimeFunction()));
+    survivalTimeTimer->start(1); survivalTimeValueTimer->start();
+}
+
+void GameWindow::timeoutFunction()
+{
+    gameState->moveEnemy();
+    if (gameState->gameOver()){
+        gameOverTransition();
+        return;
+    }
+    updateGridToMatchGameState(ui->simulationGrid);
+    timer->setInterval(gameState->getEnemyMoveSpeedInMilliseconds());
+}
+
+void GameWindow::updateSurvivalTimeFunction()
+{
+    ui->survivalTimeLabel->setText(QString::fromStdString(std::to_string(survivalTimeValueTimer->elapsed()/1000.0)));
+}
+
+void GameWindow::gameOverTransition(){
+    timer->stop(); survivedTimeInSeconds = survivalTimeValueTimer->elapsed()/1000.0; survivalTimeTimer->stop();
+    ui->stackedWidget->setCurrentIndex(2);
+    ui->causeOfDeathLabel->setText(QString::fromStdString(gameState->getCauseOfDeath()));
+    ui->gameOverSurvivalTimeLabel->setText(QString::fromStdString("Survival time: " + std::to_string(survivedTimeInSeconds) + " seconds"));
+}
+
+
+void GameWindow::on_gameOverPageBackToMainMenuButton_clicked()
+{
+    hide();
 }
 

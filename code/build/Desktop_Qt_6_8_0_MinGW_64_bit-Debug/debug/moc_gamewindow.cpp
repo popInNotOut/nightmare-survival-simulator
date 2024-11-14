@@ -46,7 +46,8 @@ constexpr auto qt_meta_stringdata_CLASSGameWindowENDCLASS = QtMocHelpers::string
     "on_floodCheckBox_stateChanged",
     "on_wildfireCheckBox_stateChanged",
     "on_tornadoCheckBox_stateChanged",
-    "on_resetButton_clicked"
+    "on_resetButton_clicked",
+    "on_finishButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -59,7 +60,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,15 +68,16 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   68,    2, 0x08,    1 /* Private */,
-       3,    1,   69,    2, 0x08,    2 /* Private */,
-       5,    1,   72,    2, 0x08,    4 /* Private */,
-       6,    1,   75,    2, 0x08,    6 /* Private */,
-       7,    1,   78,    2, 0x08,    8 /* Private */,
-       8,    1,   81,    2, 0x08,   10 /* Private */,
-       9,    1,   84,    2, 0x08,   12 /* Private */,
-      10,    1,   87,    2, 0x08,   14 /* Private */,
-      11,    0,   90,    2, 0x08,   16 /* Private */,
+       1,    0,   74,    2, 0x08,    1 /* Private */,
+       3,    1,   75,    2, 0x08,    2 /* Private */,
+       5,    1,   78,    2, 0x08,    4 /* Private */,
+       6,    1,   81,    2, 0x08,    6 /* Private */,
+       7,    1,   84,    2, 0x08,    8 /* Private */,
+       8,    1,   87,    2, 0x08,   10 /* Private */,
+       9,    1,   90,    2, 0x08,   12 /* Private */,
+      10,    1,   93,    2, 0x08,   14 /* Private */,
+      11,    0,   96,    2, 0x08,   16 /* Private */,
+      12,    0,   97,    2, 0x08,   17 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -86,6 +88,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameWindowENDCLASS[] = {
     QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void,
     QMetaType::Void,
 
        0        // eod
@@ -124,6 +127,8 @@ Q_CONSTINIT const QMetaObject GameWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_resetButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_finishButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -144,6 +149,7 @@ void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 6: _t->on_wildfireCheckBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 7: _t->on_tornadoCheckBox_stateChanged((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         case 8: _t->on_resetButton_clicked(); break;
+        case 9: _t->on_finishButton_clicked(); break;
         default: ;
         }
     }
@@ -168,13 +174,13 @@ int GameWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

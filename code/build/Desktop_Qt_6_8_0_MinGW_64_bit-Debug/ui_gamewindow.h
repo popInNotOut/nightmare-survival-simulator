@@ -29,12 +29,12 @@ public:
     QStackedWidget *stackedWidget;
     QWidget *buildPage;
     QWidget *gridLayoutWidget;
-    QGridLayout *grid;
+    QGridLayout *buildGrid;
     QPushButton *finishButton;
     QPushButton *backToMainMenuButton;
     QLabel *selectBlocksOuterLabel;
     QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *buildBlocksVerticalLayout;
     QHBoxLayout *horizontalLayout_6;
     QLabel *placeBlocksLabel;
     QLabel *budgetLabel;
@@ -56,7 +56,7 @@ public:
     QCheckBox *concreteCheckBox;
     QLabel *selectDisasterOuterLabel;
     QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *verticalLayout_2;
+    QVBoxLayout *disasterVerticalLayout;
     QLabel *selectDisasterLabel;
     QHBoxLayout *horizontalLayout_2;
     QLabel *floodLabel;
@@ -72,6 +72,31 @@ public:
     QCheckBox *tornadoCheckBox;
     QPushButton *resetButton;
     QWidget *simulationPage;
+    QWidget *gridLayoutWidget_2;
+    QGridLayout *simulationGrid;
+    QWidget *verticalLayoutWidget_3;
+    QVBoxLayout *entityInformationVerticalLayout;
+    QHBoxLayout *horizontalLayout_9;
+    QLabel *playerLabel;
+    QLabel *playerImageLabel;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *robberLabel;
+    QLabel *robberImageLabel;
+    QHBoxLayout *horizontalLayout_11;
+    QLabel *terroristLabel;
+    QLabel *terroristImageLabel;
+    QHBoxLayout *horizontalLayout_12;
+    QLabel *disasterLabel;
+    QLabel *disasterImageLabel;
+    QWidget *verticalLayoutWidget_4;
+    QVBoxLayout *survivalTimeVerticalLayout;
+    QLabel *survivalTimeDisplayLabel;
+    QLabel *survivalTimeLabel;
+    QLabel *upArrowKeyLabel;
+    QLabel *leftArrowKeyLabel;
+    QLabel *downArrowKeyLabel;
+    QLabel *rightArrowKeyLabel;
+    QLabel *useArrowKeysToMoveLabel;
     QWidget *gameOverPage;
 
     void setupUi(QDialog *GameWindow)
@@ -94,9 +119,9 @@ public:
         gridLayoutWidget = new QWidget(buildPage);
         gridLayoutWidget->setObjectName("gridLayoutWidget");
         gridLayoutWidget->setGeometry(QRect(20, 20, 631, 591));
-        grid = new QGridLayout(gridLayoutWidget);
-        grid->setObjectName("grid");
-        grid->setContentsMargins(0, 0, 0, 0);
+        buildGrid = new QGridLayout(gridLayoutWidget);
+        buildGrid->setObjectName("buildGrid");
+        buildGrid->setContentsMargins(0, 0, 0, 0);
         finishButton = new QPushButton(buildPage);
         finishButton->setObjectName("finishButton");
         finishButton->setGeometry(QRect(830, 520, 151, 91));
@@ -144,9 +169,9 @@ public:
         verticalLayoutWidget = new QWidget(buildPage);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
         verticalLayoutWidget->setGeometry(QRect(680, 80, 293, 201));
-        verticalLayout = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout->setObjectName("verticalLayout");
-        verticalLayout->setContentsMargins(0, 0, 0, 0);
+        buildBlocksVerticalLayout = new QVBoxLayout(verticalLayoutWidget);
+        buildBlocksVerticalLayout->setObjectName("buildBlocksVerticalLayout");
+        buildBlocksVerticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout_6 = new QHBoxLayout();
         horizontalLayout_6->setObjectName("horizontalLayout_6");
         placeBlocksLabel = new QLabel(verticalLayoutWidget);
@@ -176,7 +201,7 @@ public:
         horizontalLayout_6->addWidget(budgetLabel);
 
 
-        verticalLayout->addLayout(horizontalLayout_6);
+        buildBlocksVerticalLayout->addLayout(horizontalLayout_6);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
@@ -201,7 +226,7 @@ public:
         horizontalLayout->addWidget(grassCheckBox);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        buildBlocksVerticalLayout->addLayout(horizontalLayout);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setObjectName("horizontalLayout_3");
@@ -226,7 +251,7 @@ public:
         horizontalLayout_3->addWidget(woodCheckBox);
 
 
-        verticalLayout->addLayout(horizontalLayout_3);
+        buildBlocksVerticalLayout->addLayout(horizontalLayout_3);
 
         horizontalLayout_4 = new QHBoxLayout();
         horizontalLayout_4->setObjectName("horizontalLayout_4");
@@ -251,7 +276,7 @@ public:
         horizontalLayout_4->addWidget(cobblestoneCheckBox);
 
 
-        verticalLayout->addLayout(horizontalLayout_4);
+        buildBlocksVerticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout_5 = new QHBoxLayout();
         horizontalLayout_5->setObjectName("horizontalLayout_5");
@@ -276,7 +301,7 @@ public:
         horizontalLayout_5->addWidget(concreteCheckBox);
 
 
-        verticalLayout->addLayout(horizontalLayout_5);
+        buildBlocksVerticalLayout->addLayout(horizontalLayout_5);
 
         selectDisasterOuterLabel = new QLabel(buildPage);
         selectDisasterOuterLabel->setObjectName("selectDisasterOuterLabel");
@@ -287,9 +312,9 @@ public:
         verticalLayoutWidget_2 = new QWidget(buildPage);
         verticalLayoutWidget_2->setObjectName("verticalLayoutWidget_2");
         verticalLayoutWidget_2->setGeometry(QRect(680, 310, 291, 191));
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
+        disasterVerticalLayout = new QVBoxLayout(verticalLayoutWidget_2);
+        disasterVerticalLayout->setObjectName("disasterVerticalLayout");
+        disasterVerticalLayout->setContentsMargins(0, 0, 0, 0);
         selectDisasterLabel = new QLabel(verticalLayoutWidget_2);
         selectDisasterLabel->setObjectName("selectDisasterLabel");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
@@ -306,7 +331,7 @@ public:
 "	qproperty-alignment: AlignCenter;\n"
 "}"));
 
-        verticalLayout_2->addWidget(selectDisasterLabel);
+        disasterVerticalLayout->addWidget(selectDisasterLabel);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
@@ -338,7 +363,7 @@ public:
         horizontalLayout_2->addWidget(floodCheckBox);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_2);
+        disasterVerticalLayout->addLayout(horizontalLayout_2);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName("horizontalLayout_7");
@@ -365,7 +390,7 @@ public:
         horizontalLayout_7->addWidget(wildfireCheckBox);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_7);
+        disasterVerticalLayout->addLayout(horizontalLayout_7);
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName("horizontalLayout_8");
@@ -392,7 +417,7 @@ public:
         horizontalLayout_8->addWidget(tornadoCheckBox);
 
 
-        verticalLayout_2->addLayout(horizontalLayout_8);
+        disasterVerticalLayout->addLayout(horizontalLayout_8);
 
         resetButton = new QPushButton(buildPage);
         resetButton->setObjectName("resetButton");
@@ -417,13 +442,150 @@ public:
         simulationPage = new QWidget();
         simulationPage->setObjectName("simulationPage");
         simulationPage->setStyleSheet(QString::fromUtf8("QWidget#simulationPage{\n"
+"	background-image: url(:/img/img/simulationPageBackground.jpg);\n"
+"}"));
+        gridLayoutWidget_2 = new QWidget(simulationPage);
+        gridLayoutWidget_2->setObjectName("gridLayoutWidget_2");
+        gridLayoutWidget_2->setGeometry(QRect(10, 10, 711, 621));
+        simulationGrid = new QGridLayout(gridLayoutWidget_2);
+        simulationGrid->setObjectName("simulationGrid");
+        simulationGrid->setContentsMargins(0, 0, 0, 0);
+        verticalLayoutWidget_3 = new QWidget(simulationPage);
+        verticalLayoutWidget_3->setObjectName("verticalLayoutWidget_3");
+        verticalLayoutWidget_3->setGeometry(QRect(730, 290, 261, 181));
+        entityInformationVerticalLayout = new QVBoxLayout(verticalLayoutWidget_3);
+        entityInformationVerticalLayout->setObjectName("entityInformationVerticalLayout");
+        entityInformationVerticalLayout->setContentsMargins(0, 0, 0, 0);
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setObjectName("horizontalLayout_9");
+        playerLabel = new QLabel(verticalLayoutWidget_3);
+        playerLabel->setObjectName("playerLabel");
+        playerLabel->setStyleSheet(QString::fromUtf8("QLabel#playerLabel{\n"
 "	background-color: white;\n"
+"	font: 600 9pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+
+        horizontalLayout_9->addWidget(playerLabel);
+
+        playerImageLabel = new QLabel(verticalLayoutWidget_3);
+        playerImageLabel->setObjectName("playerImageLabel");
+
+        horizontalLayout_9->addWidget(playerImageLabel);
+
+
+        entityInformationVerticalLayout->addLayout(horizontalLayout_9);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setObjectName("horizontalLayout_10");
+        robberLabel = new QLabel(verticalLayoutWidget_3);
+        robberLabel->setObjectName("robberLabel");
+        robberLabel->setStyleSheet(QString::fromUtf8("QLabel#robberLabel{\n"
+"	background-color: white;\n"
+"	font: 600 9pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+
+        horizontalLayout_10->addWidget(robberLabel);
+
+        robberImageLabel = new QLabel(verticalLayoutWidget_3);
+        robberImageLabel->setObjectName("robberImageLabel");
+
+        horizontalLayout_10->addWidget(robberImageLabel);
+
+
+        entityInformationVerticalLayout->addLayout(horizontalLayout_10);
+
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setObjectName("horizontalLayout_11");
+        terroristLabel = new QLabel(verticalLayoutWidget_3);
+        terroristLabel->setObjectName("terroristLabel");
+        terroristLabel->setStyleSheet(QString::fromUtf8("QLabel#terroristLabel{\n"
+"	background-color: white;\n"
+"	font: 600 9pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+
+        horizontalLayout_11->addWidget(terroristLabel);
+
+        terroristImageLabel = new QLabel(verticalLayoutWidget_3);
+        terroristImageLabel->setObjectName("terroristImageLabel");
+
+        horizontalLayout_11->addWidget(terroristImageLabel);
+
+
+        entityInformationVerticalLayout->addLayout(horizontalLayout_11);
+
+        horizontalLayout_12 = new QHBoxLayout();
+        horizontalLayout_12->setObjectName("horizontalLayout_12");
+        disasterLabel = new QLabel(verticalLayoutWidget_3);
+        disasterLabel->setObjectName("disasterLabel");
+        disasterLabel->setStyleSheet(QString::fromUtf8("QLabel#disasterLabel{\n"
+"	background-color: white;\n"
+"	font: 600 9pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+
+        horizontalLayout_12->addWidget(disasterLabel);
+
+        disasterImageLabel = new QLabel(verticalLayoutWidget_3);
+        disasterImageLabel->setObjectName("disasterImageLabel");
+
+        horizontalLayout_12->addWidget(disasterImageLabel);
+
+
+        entityInformationVerticalLayout->addLayout(horizontalLayout_12);
+
+        verticalLayoutWidget_4 = new QWidget(simulationPage);
+        verticalLayoutWidget_4->setObjectName("verticalLayoutWidget_4");
+        verticalLayoutWidget_4->setGeometry(QRect(730, 490, 261, 141));
+        survivalTimeVerticalLayout = new QVBoxLayout(verticalLayoutWidget_4);
+        survivalTimeVerticalLayout->setObjectName("survivalTimeVerticalLayout");
+        survivalTimeVerticalLayout->setContentsMargins(0, 0, 0, 0);
+        survivalTimeDisplayLabel = new QLabel(verticalLayoutWidget_4);
+        survivalTimeDisplayLabel->setObjectName("survivalTimeDisplayLabel");
+        survivalTimeDisplayLabel->setStyleSheet(QString::fromUtf8("QLabel#survivalTimeDisplayLabel{\n"
+"	background-color: white;\n"
+"	font: 600 14pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+
+        survivalTimeVerticalLayout->addWidget(survivalTimeDisplayLabel);
+
+        survivalTimeLabel = new QLabel(verticalLayoutWidget_4);
+        survivalTimeLabel->setObjectName("survivalTimeLabel");
+
+        survivalTimeVerticalLayout->addWidget(survivalTimeLabel);
+
+        upArrowKeyLabel = new QLabel(simulationPage);
+        upArrowKeyLabel->setObjectName("upArrowKeyLabel");
+        upArrowKeyLabel->setGeometry(QRect(810, 40, 61, 55));
+        upArrowKeyLabel->setScaledContents(false);
+        leftArrowKeyLabel = new QLabel(simulationPage);
+        leftArrowKeyLabel->setObjectName("leftArrowKeyLabel");
+        leftArrowKeyLabel->setGeometry(QRect(740, 90, 62, 55));
+        leftArrowKeyLabel->setScaledContents(false);
+        downArrowKeyLabel = new QLabel(simulationPage);
+        downArrowKeyLabel->setObjectName("downArrowKeyLabel");
+        downArrowKeyLabel->setGeometry(QRect(810, 140, 61, 55));
+        downArrowKeyLabel->setScaledContents(false);
+        rightArrowKeyLabel = new QLabel(simulationPage);
+        rightArrowKeyLabel->setObjectName("rightArrowKeyLabel");
+        rightArrowKeyLabel->setGeometry(QRect(860, 90, 62, 55));
+        rightArrowKeyLabel->setScaledContents(false);
+        useArrowKeysToMoveLabel = new QLabel(simulationPage);
+        useArrowKeysToMoveLabel->setObjectName("useArrowKeysToMoveLabel");
+        useArrowKeysToMoveLabel->setGeometry(QRect(740, 210, 231, 41));
+        useArrowKeysToMoveLabel->setStyleSheet(QString::fromUtf8("QLabel#useArrowKeysToMoveLabel{\n"
+"	background-color: white;\n"
+"	font: 600 11pt \"Segoe UI Semibold\";\n"
+"	qproperty-alignment: AlignCenter;\n"
 "}"));
         stackedWidget->addWidget(simulationPage);
         gameOverPage = new QWidget();
         gameOverPage->setObjectName("gameOverPage");
         gameOverPage->setStyleSheet(QString::fromUtf8("QWidget#gameOverPage{\n"
-"	background-color: white;\n"
+"	background-image: url(:/img/img/gameOverPageBackground.jpg);\n"
 "}"));
         stackedWidget->addWidget(gameOverPage);
 
@@ -440,16 +602,16 @@ public:
         selectBlocksOuterLabel->setText(QString());
         placeBlocksLabel->setText(QCoreApplication::translate("GameWindow", "Place Blocks", nullptr));
         budgetLabel->setText(QCoreApplication::translate("GameWindow", "(Show Budget)", nullptr));
-        grassLabel->setText(QCoreApplication::translate("GameWindow", "Grass ($5)", nullptr));
+        grassLabel->setText(QCoreApplication::translate("GameWindow", "Grass ($2)", nullptr));
         grassImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
         grassCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
-        woodLabel->setText(QCoreApplication::translate("GameWindow", "Wood ($10)", nullptr));
+        woodLabel->setText(QCoreApplication::translate("GameWindow", "Wood ($3)", nullptr));
         woodImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
         woodCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
-        cobblestoneLabel->setText(QCoreApplication::translate("GameWindow", "Cobblestone ($15)", nullptr));
+        cobblestoneLabel->setText(QCoreApplication::translate("GameWindow", "Cobblestone ($5)", nullptr));
         cobblestoneImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
         cobblestoneCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
-        concreteLabel->setText(QCoreApplication::translate("GameWindow", "Concrete ($20)", nullptr));
+        concreteLabel->setText(QCoreApplication::translate("GameWindow", "Concrete ($7)", nullptr));
         concreteImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
         concreteCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
         selectDisasterOuterLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
@@ -464,6 +626,21 @@ public:
         tornadoImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
         tornadoCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
         resetButton->setText(QCoreApplication::translate("GameWindow", "RESET", nullptr));
+        playerLabel->setText(QCoreApplication::translate("GameWindow", "Player", nullptr));
+        playerImageLabel->setText(QString());
+        robberLabel->setText(QCoreApplication::translate("GameWindow", "Robber", nullptr));
+        robberImageLabel->setText(QString());
+        terroristLabel->setText(QCoreApplication::translate("GameWindow", "Terrorist", nullptr));
+        terroristImageLabel->setText(QString());
+        disasterLabel->setText(QCoreApplication::translate("GameWindow", "Disaster", nullptr));
+        disasterImageLabel->setText(QString());
+        survivalTimeDisplayLabel->setText(QCoreApplication::translate("GameWindow", "Survival Time (seconds)", nullptr));
+        survivalTimeLabel->setText(QString());
+        upArrowKeyLabel->setText(QString());
+        leftArrowKeyLabel->setText(QString());
+        downArrowKeyLabel->setText(QString());
+        rightArrowKeyLabel->setText(QString());
+        useArrowKeysToMoveLabel->setText(QCoreApplication::translate("GameWindow", "Use Arrow Keys to Move", nullptr));
     } // retranslateUi
 
 };

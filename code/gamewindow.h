@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include <QPixMap>
+#include <QGridLayout>
+#include <QKeyEvent>
 #include "objects.h"
 
 namespace Ui {
@@ -36,11 +38,15 @@ private slots:
 
     void on_resetButton_clicked();
 
+    void on_finishButton_clicked();
+
 private:
     Ui::GameWindow *ui;
     QPixmap grassPic, woodPic, cobblestonePic, concretePic; QPixmap playerPic, robberPic, terroristPic; QPixmap floodPic, wildfirePic, tornadoPic;
+    QPixmap leftArrowKeyPic, rightArrowKeyPic, downArrowKeyPic, upArrowKeyPic;
     EntityFacade *gameState;
-    void init(), initGridCells(), updateGridToMatchGameState(), gridButtonClickedEvent(int r, int c);
+    void init(), initGridCellsForBuildingGrid(), initGridCellsForSimulationGrid(), updateGridToMatchGameState(QGridLayout *selectedGrid), gridButtonClickedEvent(int r, int c);
+    void keyPressEvent(QKeyEvent *e) override, keyReleaseEvent(QKeyEvent *e) override;
 };
 
 #endif // GAMEWINDOW_H

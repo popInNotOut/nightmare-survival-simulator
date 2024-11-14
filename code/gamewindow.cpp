@@ -34,9 +34,13 @@ void GameWindow::init(){
     floodPic = (QPixmap(QString::fromStdString(Flood::FLOOD_IMG_RELATIVE_FILE_PATH)));
     wildfirePic = (QPixmap(QString::fromStdString(Wildfire::WILDFIRE_IMG_RELATIVE_FILE_PATH)));
     tornadoPic = (QPixmap(QString::fromStdString(Tornado::TORNADO_IMG_RELATIVE_FILE_PATH)));
+    leftArrowKeyPic = (QPixmap(QString::fromStdString(":/img/img/leftArrowKey.png")));
+    rightArrowKeyPic = (QPixmap(QString::fromStdString(":/img/img/rightArrowKey.png")));
+    downArrowKeyPic = (QPixmap(QString::fromStdString(":/img/img/downArrowKey.png")));
+    upArrowKeyPic = (QPixmap(QString::fromStdString(":/img/img/upArrowKey.png")));
 
-    gameState = new EntityFacade(); gameState->initBuildingPhase();
-    initGridCells(); updateGridToMatchGameState();
+    gameState = new EntityFacade();
+    initGridCellsForBuildingGrid(); gameState->initBuildingPhase(); updateGridToMatchGameState(ui->buildGrid);
 
     int w = ui->floodImageLabel->width(), h = ui->floodImageLabel->height();
     ui->floodImageLabel->setPixmap(floodPic.scaled(w,h,Qt::KeepAspectRatio));
@@ -52,53 +56,62 @@ void GameWindow::init(){
     ui->budgetLabel->setText(QString::fromStdString("Budget = " + std::to_string(gameState->getBudget())));
 }
 
-void GameWindow::initGridCells(){
+void GameWindow::initGridCellsForBuildingGrid(){
     for (int row = 0; row < gameState->NUM_OF_GRID_ROWS; row++){
         for (int column = 0; column < gameState->NUM_OF_GRID_COLUMNS; column++){
-            ui->grid->addWidget(new QPushButton(),row,column);
-            connect(qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget()), &QPushButton::clicked, [=](){
+            ui->buildGrid->addWidget(new QPushButton(),row,column);
+            connect(qobject_cast<QPushButton*>(ui->buildGrid->itemAtPosition(row,column)->widget()), &QPushButton::clicked, [=](){
                 gridButtonClickedEvent(row, column);
             });
         }
     }
 }
 
-void GameWindow::updateGridToMatchGameState(){
+void GameWindow::initGridCellsForSimulationGrid(){
+    for (int row = 0; row < gameState->NUM_OF_GRID_ROWS; row++){
+        for (int column = 0; column < gameState->NUM_OF_GRID_COLUMNS; column++){
+            ui->simulationGrid->addWidget(new QPushButton(),row,column);
+            qobject_cast<QPushButton*>(ui->simulationGrid->itemAtPosition(row,column)->widget())->setFocusPolicy(Qt::NoFocus);
+        }
+    }
+}
+
+void GameWindow::updateGridToMatchGameState(QGridLayout *selectedGrid){
     for (int row = 0; row < gameState->NUM_OF_GRID_ROWS; row++){
         for (int column = 0; column < gameState->NUM_OF_GRID_COLUMNS; column++){
             switch(gameState->getEntityAtCell({row,column})){
                 case EntityType::GRASS:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(grassPic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(grassPic));
                     break;
                 case EntityType::WOOD:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(woodPic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(woodPic));
                     break;
                 case EntityType::COBBLESTONE:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(cobblestonePic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(cobblestonePic));
                     break;
                 case EntityType::CONCRETE:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(concretePic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(concretePic));
                     break;
                 case EntityType::PLAYER:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(playerPic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(playerPic));
                     break;
                 case EntityType::ROBBER:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(robberPic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(robberPic));
                     break;
                 case EntityType::TERRORIST:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(terroristPic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(terroristPic));
                     break;
                 case EntityType::FLOOD:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(floodPic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(floodPic));
                     break;
                 case EntityType::WILDFIRE:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(wildfirePic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(wildfirePic));
                     break;
                 case EntityType::TORNADO:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon(tornadoPic));
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon(tornadoPic));
                     break;
                 case EntityType::EMPTY:
-                    qobject_cast<QPushButton*>(ui->grid->itemAtPosition(row,column)->widget())->setIcon(QIcon());
+                    qobject_cast<QPushButton*>(selectedGrid->itemAtPosition(row,column)->widget())->setIcon(QIcon());
                     break;
             }
         }
@@ -146,7 +159,7 @@ void GameWindow::gridButtonClickedEvent(int r, int c){
         QMessageBox::warning(this,"Place Block Error","You did not select a block");
         return;
     }
-    updateGridToMatchGameState();
+    updateGridToMatchGameState(ui->buildGrid);
     ui->budgetLabel->setText(QString::fromStdString("Budget = " + std::to_string(gameState->getBudget())));
 }
 
@@ -197,6 +210,10 @@ void GameWindow::on_floodCheckBox_stateChanged(int arg1)
     if (ui->floodCheckBox->isChecked()){
         ui->wildfireCheckBox->setChecked(false);
         ui->tornadoCheckBox->setChecked(false);
+        gameState->setDisasterType(EntityType::FLOOD);
+    }
+    else {
+        gameState->setDisasterType(EntityType::EMPTY);
     }
 }
 
@@ -205,6 +222,10 @@ void GameWindow::on_wildfireCheckBox_stateChanged(int arg1)
     if (ui->wildfireCheckBox->isChecked()){
         ui->floodCheckBox->setChecked(false);
         ui->tornadoCheckBox->setChecked(false);
+        gameState->setDisasterType(EntityType::WILDFIRE);
+    }
+    else {
+        gameState->setDisasterType(EntityType::EMPTY);
     }
 }
 
@@ -214,7 +235,68 @@ void GameWindow::on_tornadoCheckBox_stateChanged(int arg1)
     if (ui->tornadoCheckBox->isChecked()){
         ui->floodCheckBox->setChecked(false);
         ui->wildfireCheckBox->setChecked(false);
+        gameState->setDisasterType(EntityType::TORNADO);
     }
+    else {
+        gameState->setDisasterType(EntityType::EMPTY);
+    }
+}
+
+void GameWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (event->isAutoRepeat()) return;
+    if (event->key() == Qt::Key_Left){
+        ui->rightArrowKeyLabel->hide();
+        ui->downArrowKeyLabel->hide();
+        ui->upArrowKeyLabel->hide();
+    }
+    else if (event->key() == Qt::Key_Right){
+        ui->leftArrowKeyLabel->hide();
+        ui->downArrowKeyLabel->hide();
+        ui->upArrowKeyLabel->hide();
+    }
+    else if (event->key() == Qt::Key_Down){
+        ui->leftArrowKeyLabel->hide();
+        ui->rightArrowKeyLabel->hide();
+        ui->upArrowKeyLabel->hide();
+    }
+    else if (event->key() == Qt::Key_Up){
+        ui->leftArrowKeyLabel->hide();
+        ui->rightArrowKeyLabel->hide();
+        ui->downArrowKeyLabel->hide();
+    }
+    updateGridToMatchGameState(ui->simulationGrid);
+}
+
+void GameWindow::keyReleaseEvent(QKeyEvent *event)
+{
+    if (event->isAutoRepeat()) return;
+    if (event->key() == Qt::Key_Left){
+        gameState->movePlayer(0,-1);
+        ui->rightArrowKeyLabel->show();
+        ui->downArrowKeyLabel->show();
+        ui->upArrowKeyLabel->show();
+    }
+    else if (event->key() == Qt::Key_Right){
+        gameState->movePlayer(0,1);
+        ui->leftArrowKeyLabel->show();
+        ui->downArrowKeyLabel->show();
+        ui->upArrowKeyLabel->show();
+    }
+    else if (event->key() == Qt::Key_Down){
+        gameState->movePlayer(1,0);
+        ui->leftArrowKeyLabel->show();
+        ui->rightArrowKeyLabel->show();
+        ui->upArrowKeyLabel->show();
+    }
+    else if (event->key() == Qt::Key_Up){
+        gameState->movePlayer(-1,0);
+        ui->leftArrowKeyLabel->show();
+        ui->rightArrowKeyLabel->show();
+        ui->downArrowKeyLabel->show();
+    }
+    gameState->moveEnemy();
+    updateGridToMatchGameState(ui->simulationGrid);
 }
 
 
@@ -229,7 +311,32 @@ void GameWindow::on_resetButton_clicked()
     ui->tornadoCheckBox->setChecked(false);
     gameState->initBuildingPhase();
     gameState->setBudget(100);
-    updateGridToMatchGameState();
+    updateGridToMatchGameState(ui->buildGrid);
     ui->budgetLabel->setText(QString::fromStdString("Budget = " + std::to_string(gameState->getBudget())));
+}
+
+void GameWindow::on_finishButton_clicked()
+{
+    if (gameState->getDisasterType() == EntityType::EMPTY){
+        QMessageBox::warning(this,"Finish Build Phase Error","You did not select a disaster");
+        return;
+    }
+
+    ui->stackedWidget->setCurrentIndex(1);
+
+    int w = ui->leftArrowKeyLabel->width(), h = ui->leftArrowKeyLabel->height();
+    ui->leftArrowKeyLabel->setPixmap(leftArrowKeyPic.scaled(w,h,Qt::KeepAspectRatio));
+    ui->rightArrowKeyLabel->setPixmap(rightArrowKeyPic.scaled(w,h,Qt::KeepAspectRatio));
+    ui->downArrowKeyLabel->setPixmap(downArrowKeyPic.scaled(w,h,Qt::KeepAspectRatio));
+    ui->upArrowKeyLabel->setPixmap(upArrowKeyPic.scaled(w,h,Qt::KeepAspectRatio));
+    w = ui->playerImageLabel->width(); h = ui->playerImageLabel->height();
+    ui->playerImageLabel->setPixmap(playerPic.scaled(w,h,Qt::KeepAspectRatio));
+    ui->robberImageLabel->setPixmap(robberPic.scaled(w,h,Qt::KeepAspectRatio));
+    ui->terroristImageLabel->setPixmap(terroristPic.scaled(w,h,Qt::KeepAspectRatio));
+    if (gameState->getDisasterType() == EntityType::FLOOD) ui->disasterImageLabel->setPixmap(floodPic.scaled(w,h,Qt::KeepAspectRatio));
+    else if (gameState->getDisasterType() == EntityType::WILDFIRE) ui->disasterImageLabel->setPixmap(wildfirePic.scaled(w,h,Qt::KeepAspectRatio));
+    else if (gameState->getDisasterType() == EntityType::TORNADO) ui->disasterImageLabel->setPixmap(tornadoPic.scaled(w,h,Qt::KeepAspectRatio));
+
+    initGridCellsForSimulationGrid(); gameState->initSimulationPhase(); updateGridToMatchGameState(ui->simulationGrid);
 }
 

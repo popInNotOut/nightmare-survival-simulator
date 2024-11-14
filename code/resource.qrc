@@ -12,6 +12,12 @@
         <file>img/concreteBlock.png</file>
         <file>img/grassBlock.png</file>
         <file>img/woodBlock.png</file>
+        <file>img/gameOverPageBackground.jpg</file>
+        <file>img/simulationPageBackground.jpg</file>
+        <file>img/downArrowKey.png</file>
+        <file>img/leftArrowKey.png</file>
+        <file>img/rightArrowKey.png</file>
+        <file>img/upArrowKey.png</file>
     </qresource>
     <qresource prefix="/objects"/>
 </RCC>

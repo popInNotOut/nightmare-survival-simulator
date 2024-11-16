@@ -18,6 +18,6 @@
         <file>img/leftArrowKey.png</file>
         <file>img/rightArrowKey.png</file>
         <file>img/upArrowKey.png</file>
+        <file>img/highscoresBackground.jpg</file>
     </qresource>
-    <qresource prefix="/objects"/>
 </RCC>

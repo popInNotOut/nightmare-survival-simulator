@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include <set>
+#include <QPixmap>
+#include <QCoreApplication>
 
 // This file uses:
 // - Factory creational pattern (for creating blocks, persons, and disasters)
@@ -172,7 +174,7 @@ public:
 private:
     inline static std::string moveLoop[10]{"D", "R", "R", "R", "R", "R", "R", "T", "T", "T"}; // D - Disaster Move, R - Robber Move, T - Terrorist Move
     int moveLoopIndex = 0, budget = 100, enemyMoveSpeedInMilliseconds = 500;
-    Disaster *disaster; EntityType disasterType = EntityType::EMPTY;
+    Disaster *disaster; EntityType disasterType = EntityType::EMPTY; QPixmap disasterPic;
     BlockFactory *blockFactory = new BlockFactory(); PersonFactory *personFactory = new PersonFactory(); DisasterFactory *disasterFactory = new DisasterFactory();
     std::pair<void*,EntityType> gridData[NUM_OF_GRID_ROWS][NUM_OF_GRID_COLUMNS];
     Player *player = new Player(); Robber *robber = new Robber(); Terrorist *terrorist = new Terrorist();
@@ -184,11 +186,31 @@ public:
     bool isCellEmpty(std::pair<int,int> location), isCellInBounds(std::pair<int,int> location), isCellAvailable(std::pair<int,int> location);
     void setBudget(int newBudget); int getBudget();
     void setEnemyMoveSpeedInMilliseconds(int newMoveSpeed); int getEnemyMoveSpeedInMilliseconds();
-    void setDisasterType(EntityType type); EntityType getDisasterType();
+    void setDisasterType(EntityType type); EntityType getDisasterType(); QPixmap getDisasterPic();
     void movePlayer(int dr, int dc), moveEnemy(), respawnRobber(), respawnDisaster();
     bool gameOver(); std::string getCauseOfDeath();
 };
 /*******************************************************************************************************
 ********************************** End of EntityFacade *************************************************
+*******************************************************************************************************/
+
+
+
+/*******************************************************************************************************
+************ Start of HighscoresSingleton (Stores and Manages all highscores) **************************
+*******************************************************************************************************/
+class HighscoresSingleton {
+private:
+    inline static HighscoresSingleton *instance = nullptr;
+    HighscoresSingleton();
+public:
+    static HighscoresSingleton *getInstance();
+    inline static const QString HIGHSCORES_RELATIVE_FILE_PATH = QString::fromStdString("csv_files/highscores.csv");
+    inline static const QString RUN_LOG_RELATIVE_FILE_PATH = QString::fromStdString("csv_files/run_log.csv");
+    static void updateHighscore(double survivalTimeInSeconds, EntityType disasterType), clearHighscores();
+    static void addRun(double survivalTimeInSeconds, EntityType disasteType, std::string cause_of_death), clearRunLog();
+};
+/*******************************************************************************************************
+************************************ End of HighscoresSingleton ****************************************
 *******************************************************************************************************/
 #endif // OBJECTS_H

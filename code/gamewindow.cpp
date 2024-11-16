@@ -14,6 +14,7 @@ GameWindow::GameWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Game Window");
+    ui->stackedWidget->setCurrentIndex(0);
     init();
 }
 
@@ -245,6 +246,7 @@ void GameWindow::on_tornadoCheckBox_stateChanged(int arg1)
 void GameWindow::keyPressEvent(QKeyEvent *event)
 {
     if (event->isAutoRepeat()) return;
+    if (gameState->gameOver()) return;
     if (event->key() == Qt::Key_Left){
         ui->rightArrowKeyLabel->hide();
         ui->downArrowKeyLabel->hide();
@@ -271,6 +273,7 @@ void GameWindow::keyPressEvent(QKeyEvent *event)
 void GameWindow::keyReleaseEvent(QKeyEvent *event)
 {
     if (event->isAutoRepeat()) return;
+    if (gameState->gameOver()) return;
     if (event->key() == Qt::Key_Left){
         gameState->movePlayer(0,-1);
         ui->rightArrowKeyLabel->show();
@@ -336,9 +339,7 @@ void GameWindow::on_finishButton_clicked()
     ui->playerImageLabel->setPixmap(playerPic.scaled(w,h,Qt::KeepAspectRatio));
     ui->robberImageLabel->setPixmap(robberPic.scaled(w,h,Qt::KeepAspectRatio));
     ui->terroristImageLabel->setPixmap(terroristPic.scaled(w,h,Qt::KeepAspectRatio));
-    if (gameState->getDisasterType() == EntityType::FLOOD) ui->disasterImageLabel->setPixmap(floodPic.scaled(w,h,Qt::KeepAspectRatio));
-    else if (gameState->getDisasterType() == EntityType::WILDFIRE) ui->disasterImageLabel->setPixmap(wildfirePic.scaled(w,h,Qt::KeepAspectRatio));
-    else if (gameState->getDisasterType() == EntityType::TORNADO) ui->disasterImageLabel->setPixmap(tornadoPic.scaled(w,h,Qt::KeepAspectRatio));
+    ui->disasterImageLabel->setPixmap(gameState->getDisasterPic().scaled(w,h,Qt::KeepAspectRatio));
 
     initGridCellsForSimulationGrid(); gameState->initSimulationPhase(); updateGridToMatchGameState(ui->simulationGrid);
 
@@ -372,8 +373,12 @@ void GameWindow::gameOverTransition(){
     ui->stackedWidget->setCurrentIndex(2);
     ui->causeOfDeathLabel->setText(QString::fromStdString(gameState->getCauseOfDeath()));
     ui->gameOverSurvivalTimeLabel->setText(QString::fromStdString("Survival time: " + std::to_string(survivedTimeInSeconds) + " seconds"));
+    int w = ui->gameOverDisasterImageLabel->width(), h = ui->gameOverDisasterImageLabel->height();
+    ui->gameOverDisasterImageLabel->setPixmap(gameState->getDisasterPic().scaled(w,h,Qt::KeepAspectRatio));
+    HighscoresSingleton *highscoresSingleton = HighscoresSingleton::getInstance();
+    highscoresSingleton->updateHighscore(survivedTimeInSeconds, gameState->getDisasterType());
+    highscoresSingleton->addRun(survivedTimeInSeconds,gameState->getDisasterType(),gameState->getCauseOfDeath());
 }
-
 
 void GameWindow::on_gameOverPageBackToMainMenuButton_clicked()
 {

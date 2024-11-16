@@ -3,6 +3,9 @@
 #include <algorithm>
 #include <random>
 #include <vector>
+#include <QFile>
+#include <QTextStream>
+#include <QDir>
 
 // This file uses:
 // - Factory creational pattern (for creating blocks, persons, and disasters)
@@ -216,11 +219,12 @@ void EntityFacade::setBudget(int v){ budget = v; }
 int EntityFacade::getBudget(){ return budget; }
 void EntityFacade::setDisasterType(EntityType type){
     disasterType = type;
-    if (type == EntityType::FLOOD) disaster = new Flood();
-    if (type == EntityType::WILDFIRE) disaster = new Wildfire();
-    if (type == EntityType::TORNADO) disaster = new Tornado();
+    if (type == EntityType::FLOOD) { disaster = new Flood(); disasterPic = (QPixmap(QString::fromStdString(":/img/img/flood.jpg"))); }
+    if (type == EntityType::WILDFIRE) { disaster = new Wildfire(); disasterPic = (QPixmap(QString::fromStdString(":/img/img/wildfire.jpg"))); }
+    if (type == EntityType::TORNADO) { disaster = new Tornado(); disasterPic = (QPixmap(QString::fromStdString(":/img/img/tornado.jpg"))); }
 }
 EntityType EntityFacade::getDisasterType(){ return disasterType; }
+QPixmap EntityFacade::getDisasterPic() { return disasterPic; }
 void EntityFacade::setEnemyMoveSpeedInMilliseconds(int newMoveSpeed){ enemyMoveSpeedInMilliseconds = newMoveSpeed; }
 int EntityFacade::getEnemyMoveSpeedInMilliseconds(){ return enemyMoveSpeedInMilliseconds; }
 
@@ -237,10 +241,10 @@ void EntityFacade::movePlayer(int dr, int dc){
     else if (isCellInBounds({nr,nc})){
         EntityType otherCellType = gridData[nr][nc].second;
         if (otherCellType == EntityType::ROBBER){
-            gameOverStatus = true; cause_of_death = "Cause of death: you touched a robber";
+            gameOverStatus = true; cause_of_death = "Cause of death: you touched the robber";
         }
         else if (otherCellType == EntityType::TERRORIST){
-            gameOverStatus = true; cause_of_death = "Cause of death: you touched a terrorist";
+            gameOverStatus = true; cause_of_death = "Cause of death: you touched the terrorist";
         }
         else if (otherCellType == EntityType::FLOOD || otherCellType == EntityType::WILDFIRE || otherCellType == EntityType::TORNADO){
             gameOverStatus = true; cause_of_death = "Cause of death: you touched the " + disaster->getType();
@@ -322,7 +326,7 @@ void EntityFacade::moveEnemy(){
                 if (isCellInBounds({nr,nc})){
                     if (gridData[nr][nc].second == EntityType::TERRORIST) continue;
                     if (gridData[nr][nc].second == EntityType::PLAYER) {
-                        gameOverStatus = true; cause_of_death = "Cause of death: the robber targeted you after he ran out of blocks to steal"; return;
+                        gameOverStatus = true; cause_of_death = "Cause of death: you touched the robber"; return;
                     }
                     if (abs(nr-playerLocation.first)+abs(nc-playerLocation.second) != playerDist-1) continue;
                     chosenR = nr; chosenC = nc; break;
@@ -387,7 +391,113 @@ void EntityFacade::respawnDisaster(){ // this is used in the rare case the robbe
 bool EntityFacade::gameOver(){ return gameOverStatus; }
 std::string EntityFacade::getCauseOfDeath(){ return cause_of_death; }
 /*******************************************************************************************************
-********************************** End of EntityFacade *************************************************
+**************************************** End of EntityFacade *******************************************
+*******************************************************************************************************/
+
+
+
+/*******************************************************************************************************
+************ Start of HighscoresSingleton (Stores and Manages all highscores) **************************
+*******************************************************************************************************/
+HighscoresSingleton::HighscoresSingleton(){
+    std::cout << "HighscoresSingleton instance created" << std::endl;
+}
+
+HighscoresSingleton* HighscoresSingleton::getInstance(){
+    if (instance == nullptr){
+        instance = new HighscoresSingleton();
+    }
+    return instance;
+}
+
+void HighscoresSingleton::updateHighscore(double survivalTimeInSeconds, EntityType disasterType){
+    /* Highscores csv file layout
+     *
+     * Flood,maxFloodSurvivalTime
+     * Wildfire,maxWildfireSurvivalTime
+     * Tornado,maxTornadoSurvivalTime
+     *
+     * */
+    EntityType row_type[3] = {EntityType::FLOOD, EntityType::WILDFIRE, EntityType::TORNADO};
+
+    QFile highscoresReadFile(HighscoresSingleton::HIGHSCORES_RELATIVE_FILE_PATH);
+    if (!highscoresReadFile.open(QIODevice::ReadOnly | QIODevice::Text)) { std::cerr << "Could not open highscores.csv file for reading!" << std::endl; return; }
+    std::string highscoresTableData[3][2];
+    QTextStream in(&highscoresReadFile);
+    for (int i = 0; i < 3; i++) {
+        QString line = in.readLine();
+        QStringList fields = line.split(",");
+        for (int j = 0; j < 2; j++){
+            highscoresTableData[i][j] = fields[j].toStdString();
+        }
+    }
+    highscoresReadFile.close();
+
+    for (int i = 0; i < 3; i++){
+        if (row_type[i] != disasterType) continue;
+        double cmpSurvivalTime = std::stod(highscoresTableData[i][1]);
+        if (survivalTimeInSeconds > cmpSurvivalTime){
+            highscoresTableData[i][1] = std::to_string(survivalTimeInSeconds);
+        }
+    }
+
+    QFile highscoresWriteFile(HighscoresSingleton::HIGHSCORES_RELATIVE_FILE_PATH);
+    if (!highscoresWriteFile.open(QIODevice::WriteOnly | QIODevice::Text)) { std::cerr << "Could not open highscores.csv file for writing!" << std::endl; return; }
+    QTextStream out(&highscoresWriteFile);
+    for (int i = 0; i < 3; i++){
+        QStringList fields;
+        for (int j = 0; j < 2; j++){
+            fields.append(QString::fromStdString(highscoresTableData[i][j]));
+        }
+        out << fields.join(",") << "\n";
+    }
+    highscoresWriteFile.close();
+}
+
+void HighscoresSingleton::clearHighscores(){
+    std::string highscoresTableData[3][2] = {{"Flood","-1"},{"Wildfire","-1"},{"Tornado","-1"}};
+    QFile highscoresWriteFile(HighscoresSingleton::HIGHSCORES_RELATIVE_FILE_PATH);
+    if (!highscoresWriteFile.open(QIODevice::WriteOnly | QIODevice::Text)) { std::cerr << "Could not open highscores.csv file for writing!" << std::endl; return; }
+    QTextStream out(&highscoresWriteFile);
+    for (int i = 0; i < 3; i++){
+        QStringList fields;
+        for (int j = 0; j < 2; j++){
+            fields.append(QString::fromStdString(highscoresTableData[i][j]));
+        }
+        out << fields.join(",") << "\n";
+    }
+    highscoresWriteFile.close();
+}
+
+void HighscoresSingleton::addRun(double survivalTimeInSeconds, EntityType disasterType, std::string cause_of_death){
+    /* Run Log csv entry layout
+     *
+     * Disaster Type, Survival Time, Cause of Death
+     *
+     * */
+
+    QFile runAppendFile(HighscoresSingleton::RUN_LOG_RELATIVE_FILE_PATH);
+    if (!runAppendFile.open(QIODevice::Append | QIODevice::Text)) { std::cerr << "Could not open run_log.csv file for appending!" << std::endl; return; }
+    QTextStream runAppend(&runAppendFile);
+    QStringList fields;
+    if (disasterType == EntityType::FLOOD) fields.append("Flood");
+    else if (disasterType == EntityType::WILDFIRE) fields.append("Wildfire");
+    else if (disasterType == EntityType::TORNADO) fields.append("Tornado");
+    else fields.append("Unknown");
+    fields.append(QString::fromStdString(std::to_string(survivalTimeInSeconds)));
+    fields.append(QString::fromStdString(cause_of_death));
+    runAppend << fields.join(",") << "\n";
+    runAppendFile.close();
+}
+
+void HighscoresSingleton::clearRunLog(){
+    QFile runWriteFile(HighscoresSingleton::RUN_LOG_RELATIVE_FILE_PATH);
+    if (!runWriteFile.open(QIODevice::WriteOnly | QIODevice::Text)) { std::cerr << "Could not open run_log.csv file for writing!" << std::endl; return; }
+    runWriteFile.close();
+}
+
+/*******************************************************************************************************
+************************************ End of HighscoresSingleton ****************************************
 *******************************************************************************************************/
 
 

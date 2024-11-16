@@ -20,7 +20,16 @@ public:
 private slots:
     void on_playGameButton_clicked();
 
+    void on_highscoresButton_clicked();
+
+    void on_highscorePageBackToMainMenuButton_clicked();
+
+    void on_clearHighscoresButton_clicked();
+
+    void on_clearRunLogButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+    void displayHighscores(), displayRunLog();
 };
 #endif // MAINWINDOW_H

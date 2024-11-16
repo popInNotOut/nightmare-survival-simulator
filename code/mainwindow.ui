@@ -578,7 +578,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>You must build blocks and then enter the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 40 seconds is very difficult and is considered a world-class accomplishment.</string>
+       <string>You must build blocks and then enter the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 50 seconds is very difficult and is considered a world-class accomplishment.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>

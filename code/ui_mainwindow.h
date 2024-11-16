@@ -644,7 +644,7 @@ public:
         wildfireImageLabel->setText(QString());
         tornadoLabel->setText(QCoreApplication::translate("MainWindow", "Tornado", nullptr));
         tornadoImageLabel->setText(QString());
-        playerDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "You must build blocks and then enter the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 40 seconds is very difficult and is considered a world-class accomplishment.", nullptr));
+        playerDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "You must build blocks and then enter the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 50 seconds is very difficult and is considered a world-class accomplishment.", nullptr));
         robberDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The robber targets the nearest block. If there are no blocks remaining, he will target you. The robber moves more frequently than the other enemies and is immune to every entity.", nullptr));
         moveDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies (Natural disaster, Robber, Terrorist) move in turns. The average speed of all enemies increases as the duration of the simulation increase. The speed is capped at a few hundred milliseconds. At that point, it is very hard to survive because everything moves so fast.", nullptr));
         terroristDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The terrorist cannot move through blocks but is immune to every other entity. He moves less frequently than the robber. Furthermore, he only targets you.", nullptr));

@@ -124,7 +124,9 @@ debug/qrc_resource.cpp: resource.qrc \
 		img/grassBlock.png \
 		img/robber.jpg \
 		img/apocalypseBackgroundGameWindow.jpg \
+		img/tutorialPageBackground.jpg \
 		img/concreteBlock.png \
+		img/arrowKeys.png \
 		img/apocalypseBackground.jpg \
 		img/wildfire.jpg \
 		img/terrorist.jpg \
@@ -1206,6 +1208,23 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/qtextdocument.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QListWidget \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.8.0/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qrubberband.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/QPushButton \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.8.0/mingw_64/include/QtWidgets/qabstractbutton.h \
@@ -1224,7 +1243,10 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/6.8.0/mingw_64/include/QtCore/qbasictimer.h \
 		objects.h \
 		C:/Qt/6.8.0/mingw_64/include/QtGui/QPixmap \
-		C:/Qt/6.8.0/mingw_64/include/QtCore/QCoreApplication
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QCoreApplication \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/QFile \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qfile.h \
+		C:/Qt/6.8.0/mingw_64/include/QtCore/qfiledevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o mainwindow.cpp
 
 debug/objects.o: objects.cpp objects.h \

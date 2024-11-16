@@ -306,12 +306,22 @@ void EntityFacade::moveEnemy(){
             for (int i = 0; i < 4; i++){
                 int nr = robberLocation.first + move[i][0], nc = robberLocation.second + move[i][1];
                 if (isCellInBounds({nr,nc})){
-                    if (gridData[nr][nc].second == EntityType::TERRORIST || gridData[nr][nc].second == EntityType::PLAYER) continue;
                     if (abs(nr-nearestBlock.first)+abs(nc-nearestBlock.second) != nearestBlockDist-1) continue;
-                    chosenR = nr; chosenC = nc; break;
+                    chosenR = nr; chosenC = nc;
+                    if (gridData[nr][nc].second != EntityType::TERRORIST && gridData[nr][nc].second != EntityType::PLAYER){
+                        updateCell(robberLocation, EntityType::EMPTY);
+                    }
+                    else if (gridData[nr][nc].second == EntityType::TERRORIST){
+                        updateCell(robberLocation, EntityType::TERRORIST);
+                    }
+                    else if (gridData[nr][nc].second == EntityType::PLAYER){
+                         updateCell(robberLocation, EntityType::PLAYER);
+                    }
+                    updateCell({chosenR,chosenC},EntityType::ROBBER);
+                    break;
                 }
             }
-            updateCell(robberLocation, EntityType::EMPTY); updateCell({chosenR,chosenC},EntityType::ROBBER);
+
             if (nearestBlockDist-1 == 0){
                 updateCell({chosenR,chosenC}, EntityType::EMPTY);
                 respawnRobber();

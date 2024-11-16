@@ -28,6 +28,10 @@ private slots:
 
     void on_clearRunLogButton_clicked();
 
+    void on_tutorialPageBackToMainMenuButton_clicked();
+
+    void on_tutorialButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     void displayHighscores(), displayRunLog();

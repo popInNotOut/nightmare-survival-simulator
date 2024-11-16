@@ -19,5 +19,7 @@
         <file>img/rightArrowKey.png</file>
         <file>img/upArrowKey.png</file>
         <file>img/highscoresBackground.jpg</file>
+        <file>img/tutorialPageBackground.jpg</file>
+        <file>img/arrowKeys.png</file>
     </qresource>
 </RCC>

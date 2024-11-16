@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
      <property name="autoFillBackground">
@@ -171,7 +171,642 @@ QWidget#highscoresButton::pressed{
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tutorialPage"/>
+    <widget class="QWidget" name="tutorialPage">
+     <property name="styleSheet">
+      <string notr="true">QWidget#tutorialPage{
+	background-image: url(:/img/img/tutorialPageBackground.jpg);
+}</string>
+     </property>
+     <widget class="QPushButton" name="tutorialPageBackToMainMenuButton">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>20</y>
+        <width>201</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget#tutorialPageBackToMainMenuButton{
+	border-width: 4px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(225, 225, 225);
+	font: 11pt &quot;Algerian&quot;;
+}
+
+QWidget#tutorialPageBackToMainMenuButton::pressed{
+	border-width: 4px;
+	border-style: solid;
+	border-color: black;
+	background-color: rgb(182, 182, 182);
+	font: 11pt &quot;Algerian&quot;;
+}</string>
+      </property>
+      <property name="text">
+       <string>Back to Main Menu</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="arrowKeysImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#arrowKeysImageLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resource.qrc">:/img/img/arrowKeys.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="arrowKeysDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>20</y>
+        <width>481</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#arrowKeysDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 700 11pt &quot;Sitka Display&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Use arrow keys to move yourself during the simulation phase</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="playerLabel">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>190</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#playerLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Player (You)</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="floodLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>101</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#floodLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Flood</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="playerImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>190</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#playerImageLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resource.qrc">:/img/img/player.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="robberLabel">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>330</y>
+        <width>101</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#robberLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Robber</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="robberImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>330</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#robberImageLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resource.qrc">:/img/img/robber.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="terroristImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>460</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#terroristImageLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resource.qrc">:/img/img/terrorist.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="terroristLabel">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>460</y>
+        <width>101</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#terroristLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Terrorist</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="floodImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>190</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#floodImageLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resource.qrc">:/img/img/flood.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="wildfireLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>320</y>
+        <width>101</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#wildfireLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Wildfire</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="wildfireImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>320</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#wildfireImageLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resource.qrc">:/img/img/wildfire.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tornadoLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>450</y>
+        <width>101</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#tornadoLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;8514oem&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Tornado</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tornadoImageLabel">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>450</y>
+        <width>51</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#tornadoImageLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap resource="resource.qrc">:/img/img/tornado.jpg</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="playerDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>240</y>
+        <width>341</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Titillium Web</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#playerDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>You must build blocks and then enter the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 40 seconds is very difficult and is considered a world-class accomplishment.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="robberDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>380</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Titillium Web</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#robberDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>The robber targets the nearest block. If there are no blocks remaining, he will target you. The robber moves more frequently than the other enemies and is immune to every entity.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="moveDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>80</y>
+        <width>761</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#moveDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Enemies (Natural disaster, Robber, Terrorist) move in turns. The average speed of all enemies increases as the duration of the simulation increase. The speed is capped at a few hundred milliseconds. At that point, it is very hard to survive because everything moves so fast.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="terroristDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>450</x>
+        <y>510</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Titillium Web</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#terroristDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>The terrorist cannot move through blocks but is immune to every other entity. He moves less frequently than the robber. Furthermore, he only targets you.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="floodDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>240</y>
+        <width>341</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Titillium Web</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#floodDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Each flood cell spreads orthogonally and diagonally. However, it can only destroy grass blocks.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rigorousTestingDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>130</y>
+        <width>761</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#rigorousTestingDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Enemies spawn randomly on the edge of the map. In the rare case where the robber or terrorist eats up all the disaster cells, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa. If a robber touches you before all blocks are destroyed, he will swap locations instead of attack.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="wildfireDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>370</y>
+        <width>341</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Titillium Web</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#wildfireDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Each wildfire cell spreads orthogonally. It can destroy grass and wood blocks.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="tornadoDescriptionLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>500</y>
+        <width>341</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Titillium Web</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#tornadoDescriptionLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 9pt &quot;Titillium Web&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Each tornado cell spreads diagonally. It can destroy grass, wood, and cobblestone blocks.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="highscoresPage">
      <property name="styleSheet">
       <string notr="true">QWidget#highscoresPage{

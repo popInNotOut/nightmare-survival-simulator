@@ -103,13 +103,19 @@ void MainWindow::displayRunLog(){
     if (!runLogReadFile.open(QIODevice::ReadOnly | QIODevice::Text)) { std::cerr << "Could not open run_log.csv file for reading!" << std::endl; return; }
     QTextStream in(&runLogReadFile);
     QString line;
+    std::vector<QListWidgetItem*> itemList;
     while (!in.atEnd()) {
         QString line = in.readLine();
         QStringList fields = line.split(",");
         QString disasterType = fields[0], survivalTime = fields[1], cause_of_death = fields[2];
         QListWidgetItem *item = new QListWidgetItem("Disaster: " + disasterType + ", Survival Time (seconds): " + survivalTime + ", " + cause_of_death);
+        itemList.push_back(item);
+    }
+    std::reverse(itemList.begin(), itemList.end());
+    for (QListWidgetItem *item : itemList){
         ui->runLogListWidget->addItem(item);
     }
+
     runLogReadFile.close();
 }
 
@@ -120,3 +126,13 @@ void MainWindow::on_clearRunLogButton_clicked()
     displayRunLog();
 }
 
+void MainWindow::on_tutorialButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_tutorialPageBackToMainMenuButton_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(0);
+}

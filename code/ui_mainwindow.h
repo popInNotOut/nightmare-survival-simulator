@@ -36,6 +36,29 @@ public:
     QPushButton *highscoresButton;
     QLabel *titleLabel;
     QWidget *tutorialPage;
+    QPushButton *tutorialPageBackToMainMenuButton;
+    QLabel *arrowKeysImageLabel;
+    QLabel *arrowKeysDescriptionLabel;
+    QLabel *playerLabel;
+    QLabel *floodLabel;
+    QLabel *playerImageLabel;
+    QLabel *robberLabel;
+    QLabel *robberImageLabel;
+    QLabel *terroristImageLabel;
+    QLabel *terroristLabel;
+    QLabel *floodImageLabel;
+    QLabel *wildfireLabel;
+    QLabel *wildfireImageLabel;
+    QLabel *tornadoLabel;
+    QLabel *tornadoImageLabel;
+    QLabel *playerDescriptionLabel;
+    QLabel *robberDescriptionLabel;
+    QLabel *moveDescriptionLabel;
+    QLabel *terroristDescriptionLabel;
+    QLabel *floodDescriptionLabel;
+    QLabel *rigorousTestingDescriptionLabel;
+    QLabel *wildfireDescriptionLabel;
+    QLabel *tornadoDescriptionLabel;
     QWidget *highscoresPage;
     QLabel *highscorePageFloodLabel;
     QLabel *highscorePageWildfireLabel;
@@ -165,6 +188,281 @@ public:
         stackedWidget->addWidget(mainMenuPage);
         tutorialPage = new QWidget();
         tutorialPage->setObjectName("tutorialPage");
+        tutorialPage->setStyleSheet(QString::fromUtf8("QWidget#tutorialPage{\n"
+"	background-image: url(:/img/img/tutorialPageBackground.jpg);\n"
+"}"));
+        tutorialPageBackToMainMenuButton = new QPushButton(tutorialPage);
+        tutorialPageBackToMainMenuButton->setObjectName("tutorialPageBackToMainMenuButton");
+        tutorialPageBackToMainMenuButton->setGeometry(QRect(580, 20, 201, 51));
+        tutorialPageBackToMainMenuButton->setStyleSheet(QString::fromUtf8("QWidget#tutorialPageBackToMainMenuButton{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: rgb(225, 225, 225);\n"
+"	font: 11pt \"Algerian\";\n"
+"}\n"
+"\n"
+"QWidget#tutorialPageBackToMainMenuButton::pressed{\n"
+"	border-width: 4px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: rgb(182, 182, 182);\n"
+"	font: 11pt \"Algerian\";\n"
+"}"));
+        arrowKeysImageLabel = new QLabel(tutorialPage);
+        arrowKeysImageLabel->setObjectName("arrowKeysImageLabel");
+        arrowKeysImageLabel->setGeometry(QRect(20, 20, 51, 51));
+        arrowKeysImageLabel->setStyleSheet(QString::fromUtf8("QLabel#arrowKeysImageLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"}"));
+        arrowKeysImageLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/img/arrowKeys.png")));
+        arrowKeysImageLabel->setScaledContents(true);
+        arrowKeysDescriptionLabel = new QLabel(tutorialPage);
+        arrowKeysDescriptionLabel->setObjectName("arrowKeysDescriptionLabel");
+        arrowKeysDescriptionLabel->setGeometry(QRect(70, 20, 481, 51));
+        arrowKeysDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#arrowKeysDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 700 11pt \"Sitka Display\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        playerLabel = new QLabel(tutorialPage);
+        playerLabel->setObjectName("playerLabel");
+        playerLabel->setGeometry(QRect(450, 190, 181, 51));
+        playerLabel->setStyleSheet(QString::fromUtf8("QLabel#playerLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"8514oem\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        floodLabel = new QLabel(tutorialPage);
+        floodLabel->setObjectName("floodLabel");
+        floodLabel->setGeometry(QRect(20, 190, 101, 51));
+        floodLabel->setStyleSheet(QString::fromUtf8("QLabel#floodLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"8514oem\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        playerImageLabel = new QLabel(tutorialPage);
+        playerImageLabel->setObjectName("playerImageLabel");
+        playerImageLabel->setGeometry(QRect(640, 190, 51, 51));
+        playerImageLabel->setStyleSheet(QString::fromUtf8("QLabel#playerImageLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"}"));
+        playerImageLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/img/player.png")));
+        playerImageLabel->setScaledContents(true);
+        robberLabel = new QLabel(tutorialPage);
+        robberLabel->setObjectName("robberLabel");
+        robberLabel->setGeometry(QRect(450, 330, 101, 51));
+        robberLabel->setStyleSheet(QString::fromUtf8("QLabel#robberLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"8514oem\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        robberImageLabel = new QLabel(tutorialPage);
+        robberImageLabel->setObjectName("robberImageLabel");
+        robberImageLabel->setGeometry(QRect(560, 330, 51, 51));
+        robberImageLabel->setStyleSheet(QString::fromUtf8("QLabel#robberImageLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"}"));
+        robberImageLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/img/robber.jpg")));
+        robberImageLabel->setScaledContents(true);
+        terroristImageLabel = new QLabel(tutorialPage);
+        terroristImageLabel->setObjectName("terroristImageLabel");
+        terroristImageLabel->setGeometry(QRect(560, 460, 51, 51));
+        terroristImageLabel->setStyleSheet(QString::fromUtf8("QLabel#terroristImageLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"}"));
+        terroristImageLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/img/terrorist.jpg")));
+        terroristImageLabel->setScaledContents(true);
+        terroristLabel = new QLabel(tutorialPage);
+        terroristLabel->setObjectName("terroristLabel");
+        terroristLabel->setGeometry(QRect(450, 460, 101, 51));
+        terroristLabel->setStyleSheet(QString::fromUtf8("QLabel#terroristLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"8514oem\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        floodImageLabel = new QLabel(tutorialPage);
+        floodImageLabel->setObjectName("floodImageLabel");
+        floodImageLabel->setGeometry(QRect(130, 190, 51, 51));
+        floodImageLabel->setStyleSheet(QString::fromUtf8("QLabel#floodImageLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"}"));
+        floodImageLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/img/flood.jpg")));
+        floodImageLabel->setScaledContents(true);
+        wildfireLabel = new QLabel(tutorialPage);
+        wildfireLabel->setObjectName("wildfireLabel");
+        wildfireLabel->setGeometry(QRect(20, 320, 101, 51));
+        wildfireLabel->setStyleSheet(QString::fromUtf8("QLabel#wildfireLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"8514oem\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        wildfireImageLabel = new QLabel(tutorialPage);
+        wildfireImageLabel->setObjectName("wildfireImageLabel");
+        wildfireImageLabel->setGeometry(QRect(130, 320, 51, 51));
+        wildfireImageLabel->setStyleSheet(QString::fromUtf8("QLabel#wildfireImageLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"}"));
+        wildfireImageLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/img/wildfire.jpg")));
+        wildfireImageLabel->setScaledContents(true);
+        tornadoLabel = new QLabel(tutorialPage);
+        tornadoLabel->setObjectName("tornadoLabel");
+        tornadoLabel->setGeometry(QRect(20, 450, 101, 51));
+        tornadoLabel->setStyleSheet(QString::fromUtf8("QLabel#tornadoLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"8514oem\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        tornadoImageLabel = new QLabel(tutorialPage);
+        tornadoImageLabel->setObjectName("tornadoImageLabel");
+        tornadoImageLabel->setGeometry(QRect(130, 450, 51, 51));
+        tornadoImageLabel->setStyleSheet(QString::fromUtf8("QLabel#tornadoImageLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"}"));
+        tornadoImageLabel->setPixmap(QPixmap(QString::fromUtf8(":/img/img/tornado.jpg")));
+        tornadoImageLabel->setScaledContents(true);
+        playerDescriptionLabel = new QLabel(tutorialPage);
+        playerDescriptionLabel->setObjectName("playerDescriptionLabel");
+        playerDescriptionLabel->setGeometry(QRect(450, 240, 341, 81));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Titillium Web")});
+        font.setPointSize(9);
+        font.setBold(false);
+        font.setItalic(false);
+        playerDescriptionLabel->setFont(font);
+        playerDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#playerDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        playerDescriptionLabel->setWordWrap(true);
+        robberDescriptionLabel = new QLabel(tutorialPage);
+        robberDescriptionLabel->setObjectName("robberDescriptionLabel");
+        robberDescriptionLabel->setGeometry(QRect(450, 380, 341, 71));
+        robberDescriptionLabel->setFont(font);
+        robberDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#robberDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        robberDescriptionLabel->setWordWrap(true);
+        moveDescriptionLabel = new QLabel(tutorialPage);
+        moveDescriptionLabel->setObjectName("moveDescriptionLabel");
+        moveDescriptionLabel->setGeometry(QRect(20, 80, 761, 51));
+        moveDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#moveDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        moveDescriptionLabel->setWordWrap(true);
+        terroristDescriptionLabel = new QLabel(tutorialPage);
+        terroristDescriptionLabel->setObjectName("terroristDescriptionLabel");
+        terroristDescriptionLabel->setGeometry(QRect(450, 510, 341, 71));
+        terroristDescriptionLabel->setFont(font);
+        terroristDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#terroristDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        terroristDescriptionLabel->setWordWrap(true);
+        floodDescriptionLabel = new QLabel(tutorialPage);
+        floodDescriptionLabel->setObjectName("floodDescriptionLabel");
+        floodDescriptionLabel->setGeometry(QRect(20, 240, 341, 61));
+        floodDescriptionLabel->setFont(font);
+        floodDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#floodDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        floodDescriptionLabel->setWordWrap(true);
+        rigorousTestingDescriptionLabel = new QLabel(tutorialPage);
+        rigorousTestingDescriptionLabel->setObjectName("rigorousTestingDescriptionLabel");
+        rigorousTestingDescriptionLabel->setGeometry(QRect(20, 130, 761, 51));
+        rigorousTestingDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#rigorousTestingDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        rigorousTestingDescriptionLabel->setWordWrap(true);
+        wildfireDescriptionLabel = new QLabel(tutorialPage);
+        wildfireDescriptionLabel->setObjectName("wildfireDescriptionLabel");
+        wildfireDescriptionLabel->setGeometry(QRect(20, 370, 341, 61));
+        wildfireDescriptionLabel->setFont(font);
+        wildfireDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#wildfireDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        wildfireDescriptionLabel->setWordWrap(true);
+        tornadoDescriptionLabel = new QLabel(tutorialPage);
+        tornadoDescriptionLabel->setObjectName("tornadoDescriptionLabel");
+        tornadoDescriptionLabel->setGeometry(QRect(20, 500, 341, 61));
+        tornadoDescriptionLabel->setFont(font);
+        tornadoDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#tornadoDescriptionLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 9pt \"Titillium Web\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        tornadoDescriptionLabel->setWordWrap(true);
         stackedWidget->addWidget(tutorialPage);
         highscoresPage = new QWidget();
         highscoresPage->setObjectName("highscoresPage");
@@ -318,7 +616,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -331,6 +629,29 @@ public:
         tutorialButton->setText(QCoreApplication::translate("MainWindow", "Tutorial", nullptr));
         highscoresButton->setText(QCoreApplication::translate("MainWindow", "Highscores", nullptr));
         titleLabel->setText(QCoreApplication::translate("MainWindow", "End of World Survival Simulator", nullptr));
+        tutorialPageBackToMainMenuButton->setText(QCoreApplication::translate("MainWindow", "Back to Main Menu", nullptr));
+        arrowKeysImageLabel->setText(QString());
+        arrowKeysDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Use arrow keys to move yourself during the simulation phase", nullptr));
+        playerLabel->setText(QCoreApplication::translate("MainWindow", "Player (You)", nullptr));
+        floodLabel->setText(QCoreApplication::translate("MainWindow", "Flood", nullptr));
+        playerImageLabel->setText(QString());
+        robberLabel->setText(QCoreApplication::translate("MainWindow", "Robber", nullptr));
+        robberImageLabel->setText(QString());
+        terroristImageLabel->setText(QString());
+        terroristLabel->setText(QCoreApplication::translate("MainWindow", "Terrorist", nullptr));
+        floodImageLabel->setText(QString());
+        wildfireLabel->setText(QCoreApplication::translate("MainWindow", "Wildfire", nullptr));
+        wildfireImageLabel->setText(QString());
+        tornadoLabel->setText(QCoreApplication::translate("MainWindow", "Tornado", nullptr));
+        tornadoImageLabel->setText(QString());
+        playerDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "You must build blocks and then enter the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 40 seconds is very difficult and is considered a world-class accomplishment.", nullptr));
+        robberDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The robber targets the nearest block. If there are no blocks remaining, he will target you. The robber moves more frequently than the other enemies and is immune to every entity.", nullptr));
+        moveDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies (Natural disaster, Robber, Terrorist) move in turns. The average speed of all enemies increases as the duration of the simulation increase. The speed is capped at a few hundred milliseconds. At that point, it is very hard to survive because everything moves so fast.", nullptr));
+        terroristDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The terrorist cannot move through blocks but is immune to every other entity. He moves less frequently than the robber. Furthermore, he only targets you.", nullptr));
+        floodDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Each flood cell spreads orthogonally and diagonally. However, it can only destroy grass blocks.", nullptr));
+        rigorousTestingDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies spawn randomly on the edge of the map. In the rare case where the robber or terrorist eats up all the disaster cells, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa. If a robber touches you before all blocks are destroyed, he will swap locations instead of attack.", nullptr));
+        wildfireDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Each wildfire cell spreads orthogonally. It can destroy grass and wood blocks.", nullptr));
+        tornadoDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Each tornado cell spreads diagonally. It can destroy grass, wood, and cobblestone blocks.", nullptr));
         highscorePageFloodLabel->setText(QString());
         highscorePageWildfireLabel->setText(QString());
         highscorePageTornadoLabel->setText(QString());

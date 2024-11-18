@@ -152,8 +152,8 @@ void EntityFacade::initSimulationPhase(){
         for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
             if ((i == 0 || j == 0 || i == NUM_OF_GRID_ROWS-1 || j == NUM_OF_GRID_COLUMNS-1) && gridData[i][j].second == EntityType::EMPTY){
                 emptyCellsOnEdgeOfGrid.push_back({i,j});
-                hadDisaster[i][j] = false;
             }
+            hadDisaster[i][j] = false;
         }
     }
     // there is guaranteed to be >= 3 available cells due to: the budget, cost of the minimum block type, number of persons on the grid, and number of cells on the edge of grid
@@ -227,8 +227,12 @@ void EntityFacade::setDisasterType(EntityType type){
 }
 EntityType EntityFacade::getDisasterType(){ return disasterType; }
 QPixmap EntityFacade::getDisasterPic() { return disasterPic; }
-void EntityFacade::setEnemyMoveSpeedInMilliseconds(int newMoveSpeed){ enemyMoveSpeedInMilliseconds = newMoveSpeed; }
-int EntityFacade::getEnemyMoveSpeedInMilliseconds(){ return enemyMoveSpeedInMilliseconds; }
+void EntityFacade::setRobberMoveSpeedInMilliseconds(int newMoveSpeed){ robberMoveSpeedInMilliseconds = newMoveSpeed; }
+int EntityFacade::getRobberMoveSpeedInMilliseconds(){ return robberMoveSpeedInMilliseconds; }
+void EntityFacade::setTerroristMoveSpeedInMilliseconds(int newMoveSpeed){ terroristMoveSpeedInMilliseconds = newMoveSpeed; }
+int EntityFacade::getTerroristMoveSpeedInMilliseconds(){ return terroristMoveSpeedInMilliseconds; }
+void EntityFacade::setDisasterMoveSpeedInMilliseconds(int newMoveSpeed){ disasterMoveSpeedInMilliseconds = newMoveSpeed; }
+int EntityFacade::getDisasterMoveSpeedInMilliseconds(){ return disasterMoveSpeedInMilliseconds; }
 
 void EntityFacade::movePlayer(int dr, int dc){
     // std::cout << gameOverStatus << " " << cause_of_death << std::endl;
@@ -254,34 +258,37 @@ void EntityFacade::movePlayer(int dr, int dc){
     }
 }
 
-void EntityFacade::moveEnemy(){
+void EntityFacade::moveEnemy(std::string enemyType){
     if (gameOver()) return;
 
     int move[4][2] = {{-1,0},{1,0},{0,-1},{0,1}};
 
-    if (moveLoop[moveLoopIndex] == "D"){ // move disaster
+    if (enemyType == "D"){ // move disaster
         std::vector<std::pair<int,int>> toAdd, toRemove; bool hasDisaster = false;
+        int cnt = 0;
         for (int i = 0; i < NUM_OF_GRID_ROWS; i++){
             for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
                 if (gridData[i][j].second != disasterType) continue;
                 hasDisaster = true; toRemove.push_back({i,j});
+                if (cnt > 10) continue;
                 std::vector<std::pair<int,int>> candidateCells = disaster->disperse({i,j});
                 for (std::pair<int,int> p : candidateCells) {
                     if (isCellInBounds(p) && hadDisaster[p.first][p.second]) continue;
                     if (isCellAvailable(p)){
-                        toAdd.push_back({p.first,p.second});
+                        toAdd.push_back({p.first,p.second}); cnt++;
                     }
                     else if (isCellInBounds(p)){
                         if (gridData[p.first][p.second].second == EntityType::PLAYER){
                             gameOverStatus = true; cause_of_death = "Cause of death: you touched the " + disaster->getType(); return;
                         }
                         else if (disaster->canDestroy(gridData[p.first][p.second].second)){
-                            toAdd.push_back({p.first,p.second});
+                            toAdd.push_back({p.first,p.second}); cnt++;
                         }
                     }
                 }
             }
         }
+
         for (std::pair<int,int> p : toAdd) {
             updateCell({p.first,p.second}, disasterType);
             hadDisaster[p.first][p.second] = true;
@@ -292,9 +299,10 @@ void EntityFacade::moveEnemy(){
         if (!hasDisaster){
             respawnDisaster();
         }
+        setDisasterMoveSpeedInMilliseconds(std::max(400,(int)(disasterMoveSpeedInMilliseconds*0.99)));
     }
 
-    if (moveLoop[moveLoopIndex] == "R"){ // move robber
+    if (enemyType == "R"){ // move robber
         std::pair<int,int> robberLocation = robber->getLocation();
         std::pair<int,int> nearestBlock; int nearestBlockDist = INT_MAX;
         for (int i = 0; i < NUM_OF_GRID_ROWS; i++){
@@ -351,9 +359,10 @@ void EntityFacade::moveEnemy(){
             }
             updateCell(robberLocation, EntityType::EMPTY); updateCell({chosenR,chosenC},EntityType::ROBBER);
         }
+        setRobberMoveSpeedInMilliseconds(std::max(140,(int)(robberMoveSpeedInMilliseconds*0.95)));
     }
 
-    if (moveLoop[moveLoopIndex] == "T"){ // move terrorist
+    if (enemyType == "T"){ // move terrorist
         std::pair<int,int> terroristLocation = terrorist->getLocation();
         std::pair<int,int> playerLocation = player->getLocation();
         int playerDist = abs(terroristLocation.first-playerLocation.first)+abs(terroristLocation.second-playerLocation.second);
@@ -370,10 +379,9 @@ void EntityFacade::moveEnemy(){
             }
         }
         updateCell(terroristLocation, EntityType::EMPTY); updateCell({chosenR,chosenC},EntityType::TERRORIST);
+        setTerroristMoveSpeedInMilliseconds(std::max(200,(int)(terroristMoveSpeedInMilliseconds*0.95)));
     }
 
-    setEnemyMoveSpeedInMilliseconds(std::max(150,(int)(enemyMoveSpeedInMilliseconds*0.95)));
-    moveLoopIndex = (moveLoopIndex+1)%std::size(moveLoop);
 }
 
 void EntityFacade::respawnRobber(){
@@ -390,14 +398,14 @@ void EntityFacade::respawnRobber(){
     updateCell(availableCellsOnEdgeOfGrid[0], EntityType::ROBBER);
 }
 
-void EntityFacade::respawnDisaster(){ // this is used in the rare case the robber or terrorist eats up all the disaster cells
+void EntityFacade::respawnDisaster(){
     std::vector<std::pair<int,int>> emptyCellsOnEdgeOfGrid;
     for (int i = 0; i < NUM_OF_GRID_ROWS; i++){
         for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
             if ((i == 0 || j == 0 || i == NUM_OF_GRID_ROWS-1 || j == NUM_OF_GRID_COLUMNS-1) && gridData[i][j].second == EntityType::EMPTY){
                 emptyCellsOnEdgeOfGrid.push_back({i,j});
-                hadDisaster[i][j] = false;
             }
+            hadDisaster[i][j] = false;
         }
     }
     std::random_device rd; std::mt19937 g(rd());

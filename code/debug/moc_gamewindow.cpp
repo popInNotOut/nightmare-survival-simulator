@@ -49,7 +49,9 @@ constexpr auto qt_meta_stringdata_CLASSGameWindowENDCLASS = QtMocHelpers::string
     "on_resetButton_clicked",
     "on_finishButton_clicked",
     "on_gameOverPageBackToMainMenuButton_clicked",
-    "timeoutFunction",
+    "timeoutFunctionRobber",
+    "timeoutFunctionTerrorist",
+    "timeoutFunctionDisaster",
     "updateSurvivalTimeFunction"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
@@ -63,7 +65,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameWindowENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      15,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -71,19 +73,21 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameWindowENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   92,    2, 0x08,    1 /* Private */,
-       3,    1,   93,    2, 0x08,    2 /* Private */,
-       5,    1,   96,    2, 0x08,    4 /* Private */,
-       6,    1,   99,    2, 0x08,    6 /* Private */,
-       7,    1,  102,    2, 0x08,    8 /* Private */,
-       8,    1,  105,    2, 0x08,   10 /* Private */,
-       9,    1,  108,    2, 0x08,   12 /* Private */,
-      10,    1,  111,    2, 0x08,   14 /* Private */,
-      11,    0,  114,    2, 0x08,   16 /* Private */,
-      12,    0,  115,    2, 0x08,   17 /* Private */,
-      13,    0,  116,    2, 0x08,   18 /* Private */,
-      14,    0,  117,    2, 0x0a,   19 /* Public */,
-      15,    0,  118,    2, 0x0a,   20 /* Public */,
+       1,    0,  104,    2, 0x08,    1 /* Private */,
+       3,    1,  105,    2, 0x08,    2 /* Private */,
+       5,    1,  108,    2, 0x08,    4 /* Private */,
+       6,    1,  111,    2, 0x08,    6 /* Private */,
+       7,    1,  114,    2, 0x08,    8 /* Private */,
+       8,    1,  117,    2, 0x08,   10 /* Private */,
+       9,    1,  120,    2, 0x08,   12 /* Private */,
+      10,    1,  123,    2, 0x08,   14 /* Private */,
+      11,    0,  126,    2, 0x08,   16 /* Private */,
+      12,    0,  127,    2, 0x08,   17 /* Private */,
+      13,    0,  128,    2, 0x08,   18 /* Private */,
+      14,    0,  129,    2, 0x0a,   19 /* Public */,
+      15,    0,  130,    2, 0x0a,   20 /* Public */,
+      16,    0,  131,    2, 0x0a,   21 /* Public */,
+      17,    0,  132,    2, 0x0a,   22 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -94,6 +98,8 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameWindowENDCLASS[] = {
     QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void, QMetaType::Int,    4,
     QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -141,7 +147,11 @@ Q_CONSTINIT const QMetaObject GameWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_gameOverPageBackToMainMenuButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'timeoutFunction'
+        // method 'timeoutFunctionRobber'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'timeoutFunctionTerrorist'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'timeoutFunctionDisaster'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'updateSurvivalTimeFunction'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
@@ -166,8 +176,10 @@ void GameWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->on_resetButton_clicked(); break;
         case 9: _t->on_finishButton_clicked(); break;
         case 10: _t->on_gameOverPageBackToMainMenuButton_clicked(); break;
-        case 11: _t->timeoutFunction(); break;
-        case 12: _t->updateSurvivalTimeFunction(); break;
+        case 11: _t->timeoutFunctionRobber(); break;
+        case 12: _t->timeoutFunctionTerrorist(); break;
+        case 13: _t->timeoutFunctionDisaster(); break;
+        case 14: _t->updateSurvivalTimeFunction(); break;
         default: ;
         }
     }
@@ -192,13 +204,13 @@ int GameWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 15)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 13;
+        _id -= 15;
     }
     return _id;
 }

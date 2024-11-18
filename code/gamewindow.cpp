@@ -343,24 +343,50 @@ void GameWindow::on_finishButton_clicked()
 
     initGridCellsForSimulationGrid(); gameState->initSimulationPhase(); updateGridToMatchGameState(ui->simulationGrid);
 
-    timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(timeoutFunction()));
-    timer->start(gameState->getEnemyMoveSpeedInMilliseconds());
+    robberTimer = new QTimer(this); terroristTimer = new QTimer(this); disasterTimer = new QTimer(this);
+    connect(robberTimer, SIGNAL(timeout()), this, SLOT(timeoutFunctionRobber()));
+    connect(terroristTimer, SIGNAL(timeout()), this, SLOT(timeoutFunctionTerrorist()));
+    connect(disasterTimer, SIGNAL(timeout()), this, SLOT(timeoutFunctionDisaster()));
+    robberTimer->start(gameState->getRobberMoveSpeedInMilliseconds());
+    terroristTimer->start(gameState->getTerroristMoveSpeedInMilliseconds());
+    disasterTimer->start(gameState->getDisasterMoveSpeedInMilliseconds());
 
     survivalTimeTimer = new QTimer(this); survivalTimeValueTimer = new QElapsedTimer();
     connect(survivalTimeTimer, SIGNAL(timeout()), this, SLOT(updateSurvivalTimeFunction()));
     survivalTimeTimer->start(1); survivalTimeValueTimer->start();
 }
 
-void GameWindow::timeoutFunction()
+void GameWindow::timeoutFunctionRobber()
 {
-    gameState->moveEnemy();
+    gameState->moveEnemy("R");
     if (gameState->gameOver()){
         gameOverTransition();
         return;
     }
     updateGridToMatchGameState(ui->simulationGrid);
-    timer->setInterval(gameState->getEnemyMoveSpeedInMilliseconds());
+    robberTimer->setInterval(gameState->getRobberMoveSpeedInMilliseconds());
+}
+
+void GameWindow::timeoutFunctionTerrorist()
+{
+    gameState->moveEnemy("T");
+    if (gameState->gameOver()){
+        gameOverTransition();
+        return;
+    }
+    updateGridToMatchGameState(ui->simulationGrid);
+    terroristTimer->setInterval(gameState->getTerroristMoveSpeedInMilliseconds());
+}
+
+void GameWindow::timeoutFunctionDisaster()
+{
+    gameState->moveEnemy("D");
+    if (gameState->gameOver()){
+        gameOverTransition();
+        return;
+    }
+    updateGridToMatchGameState(ui->simulationGrid);
+    disasterTimer->setInterval(gameState->getDisasterMoveSpeedInMilliseconds());
 }
 
 void GameWindow::updateSurvivalTimeFunction()
@@ -369,7 +395,8 @@ void GameWindow::updateSurvivalTimeFunction()
 }
 
 void GameWindow::gameOverTransition(){
-    timer->stop(); survivedTimeInSeconds = survivalTimeValueTimer->elapsed()/1000.0; survivalTimeTimer->stop();
+    robberTimer->stop(); terroristTimer->stop(); disasterTimer->stop();
+    survivedTimeInSeconds = survivalTimeValueTimer->elapsed()/1000.0; survivalTimeTimer->stop();
     ui->stackedWidget->setCurrentIndex(2);
     ui->causeOfDeathLabel->setText(QString::fromStdString(gameState->getCauseOfDeath()));
     ui->gameOverSurvivalTimeLabel->setText(QString::fromStdString("Survival time: " + std::to_string(survivedTimeInSeconds) + " seconds"));

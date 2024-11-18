@@ -44,7 +44,9 @@ private slots:
     void on_gameOverPageBackToMainMenuButton_clicked();
 
 public slots:
-    void timeoutFunction();
+    void timeoutFunctionRobber();
+    void timeoutFunctionTerrorist();
+    void timeoutFunctionDisaster();
     void updateSurvivalTimeFunction();
 
 private:
@@ -55,7 +57,7 @@ private:
     void init(), initGridCellsForBuildingGrid(), initGridCellsForSimulationGrid(), updateGridToMatchGameState(QGridLayout *selectedGrid), gridButtonClickedEvent(int r, int c);
     void keyPressEvent(QKeyEvent *e) override, keyReleaseEvent(QKeyEvent *e) override;
     void gameOverTransition();
-    QTimer *timer, *survivalTimeTimer; QElapsedTimer *survivalTimeValueTimer;
+    QTimer *robberTimer, *terroristTimer, *disasterTimer, *survivalTimeTimer; QElapsedTimer *survivalTimeValueTimer;
     double survivedTimeInSeconds;
 };
 

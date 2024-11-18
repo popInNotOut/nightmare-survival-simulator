@@ -108,7 +108,7 @@ void MainWindow::displayRunLog(){
         QString line = in.readLine();
         QStringList fields = line.split(",");
         QString disasterType = fields[0], survivalTime = fields[1], cause_of_death = fields[2];
-        QListWidgetItem *item = new QListWidgetItem("Disaster: " + disasterType + ", Survival Time (seconds): " + survivalTime + ", " + cause_of_death);
+        QListWidgetItem *item = new QListWidgetItem("[Disaster: " + disasterType + "], [Survival Time (seconds): " + survivalTime + "], [" + cause_of_death + "]");
         itemList.push_back(item);
     }
     std::reverse(itemList.begin(), itemList.end());

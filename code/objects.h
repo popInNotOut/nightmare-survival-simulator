@@ -172,8 +172,7 @@ class EntityFacade {
 public:
     static const int NUM_OF_GRID_ROWS = 15, NUM_OF_GRID_COLUMNS = 15; // both values must be odd (so that the player can spawn in the middle of the grid)
 private:
-    inline static std::string moveLoop[10]{"D", "R", "R", "R", "R", "R", "R", "T", "T", "T"}; // D - Disaster Move, R - Robber Move, T - Terrorist Move
-    int moveLoopIndex = 0, budget = 100, enemyMoveSpeedInMilliseconds = 500;
+    int budget = 100, robberMoveSpeedInMilliseconds = 500, terroristMoveSpeedInMilliseconds = 1000, disasterMoveSpeedInMilliseconds = 700;
     Disaster *disaster; EntityType disasterType = EntityType::EMPTY; QPixmap disasterPic; bool hadDisaster[NUM_OF_GRID_ROWS][NUM_OF_GRID_COLUMNS];
     BlockFactory *blockFactory = new BlockFactory(); PersonFactory *personFactory = new PersonFactory(); DisasterFactory *disasterFactory = new DisasterFactory();
     std::pair<void*,EntityType> gridData[NUM_OF_GRID_ROWS][NUM_OF_GRID_COLUMNS];
@@ -185,9 +184,11 @@ public:
     EntityType getEntityAtCell(std::pair<int,int> location);
     bool isCellEmpty(std::pair<int,int> location), isCellInBounds(std::pair<int,int> location), isCellAvailable(std::pair<int,int> location);
     void setBudget(int newBudget); int getBudget();
-    void setEnemyMoveSpeedInMilliseconds(int newMoveSpeed); int getEnemyMoveSpeedInMilliseconds();
+    void setRobberMoveSpeedInMilliseconds(int newMoveSpeed); int getRobberMoveSpeedInMilliseconds();
+    void setTerroristMoveSpeedInMilliseconds(int newMoveSpeed); int getTerroristMoveSpeedInMilliseconds();
+    void setDisasterMoveSpeedInMilliseconds(int newMoveSpeed); int getDisasterMoveSpeedInMilliseconds();
     void setDisasterType(EntityType type); EntityType getDisasterType(); QPixmap getDisasterPic();
-    void movePlayer(int dr, int dc), moveEnemy(), respawnRobber(), respawnDisaster();
+    void movePlayer(int dr, int dc), moveEnemy(std::string enemyType), respawnRobber(), respawnDisaster();
     bool gameOver(); std::string getCauseOfDeath();
 };
 /*******************************************************************************************************

@@ -437,6 +437,22 @@ HighscoresSingleton* HighscoresSingleton::getInstance(){
     return instance;
 }
 
+void HighscoresSingleton::initDirectories(){
+    QDir csvFileDir("csv_files");
+    if (!csvFileDir.exists()) {
+        csvFileDir.mkdir(".");
+        QFile highscoresWriteFile(HighscoresSingleton::HIGHSCORES_RELATIVE_FILE_PATH);
+        QFile runLogWriteFile(HighscoresSingleton::RUN_LOG_RELATIVE_FILE_PATH);
+        if (!highscoresWriteFile.open(QIODevice::WriteOnly | QIODevice::Text)) { std::cerr << "Could not open highscores.csv file for writing!" << std::endl; }
+        else {
+            QTextStream out(&highscoresWriteFile);
+            out << "Flood,-1\nWildfire,-1\nTornado,-1";
+        }
+        if (!runLogWriteFile.open(QIODevice::WriteOnly | QIODevice::Text)){ std::cerr << "Could not open run_log.csv file for writing!" << std::endl; }
+        highscoresWriteFile.close(); runLogWriteFile.close();
+    }
+}
+
 void HighscoresSingleton::updateHighscore(double survivalTimeInSeconds, EntityType disasterType){
     /* Highscores csv file layout
      *

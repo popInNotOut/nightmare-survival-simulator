@@ -4,6 +4,7 @@
 #include "objects.h"
 #include <iostream>
 #include <QFile>
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
+    HighscoresSingleton::initDirectories();
     ui->stackedWidget->setCurrentIndex(0);
 }
 

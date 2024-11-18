@@ -206,10 +206,11 @@ private:
     HighscoresSingleton();
 public:
     static HighscoresSingleton *getInstance();
+    static void initDirectories();
     inline static const QString HIGHSCORES_RELATIVE_FILE_PATH = QString::fromStdString("csv_files/highscores.csv");
     inline static const QString RUN_LOG_RELATIVE_FILE_PATH = QString::fromStdString("csv_files/run_log.csv");
-    static void updateHighscore(double survivalTimeInSeconds, EntityType disasterType), clearHighscores();
-    static void addRun(double survivalTimeInSeconds, EntityType disasteType, std::string cause_of_death), clearRunLog();
+    void updateHighscore(double survivalTimeInSeconds, EntityType disasterType), clearHighscores();
+    void addRun(double survivalTimeInSeconds, EntityType disasteType, std::string cause_of_death), clearRunLog();
 };
 /*******************************************************************************************************
 ************************************ End of HighscoresSingleton ****************************************

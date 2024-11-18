@@ -33,3 +33,6 @@
 
 # Build folder
 code/build/
+
+# Other files
+code/ProjectTemplate.pro.user

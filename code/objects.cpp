@@ -152,6 +152,7 @@ void EntityFacade::initSimulationPhase(){
         for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
             if ((i == 0 || j == 0 || i == NUM_OF_GRID_ROWS-1 || j == NUM_OF_GRID_COLUMNS-1) && gridData[i][j].second == EntityType::EMPTY){
                 emptyCellsOnEdgeOfGrid.push_back({i,j});
+                hadDisaster[i][j] = false;
             }
         }
     }
@@ -162,6 +163,7 @@ void EntityFacade::initSimulationPhase(){
     updateCell(robberStartingLocation, EntityType::ROBBER);
     updateCell(terroristStartingLocation, EntityType::TERRORIST);
     updateCell(disasterStartingLocation, disasterType);
+    hadDisaster[disasterStartingLocation.first][disasterStartingLocation.second] = true;
 }
 
 void EntityFacade::updateCell(std::pair<int,int> location, EntityType entityType){
@@ -258,13 +260,14 @@ void EntityFacade::moveEnemy(){
     int move[4][2] = {{-1,0},{1,0},{0,-1},{0,1}};
 
     if (moveLoop[moveLoopIndex] == "D"){ // move disaster
-        std::vector<std::pair<int,int>> toAdd; bool hasDisaster = false;
+        std::vector<std::pair<int,int>> toAdd, toRemove; bool hasDisaster = false;
         for (int i = 0; i < NUM_OF_GRID_ROWS; i++){
             for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
                 if (gridData[i][j].second != disasterType) continue;
-                hasDisaster = true;
+                hasDisaster = true; toRemove.push_back({i,j});
                 std::vector<std::pair<int,int>> candidateCells = disaster->disperse({i,j});
                 for (std::pair<int,int> p : candidateCells) {
+                    if (isCellInBounds(p) && hadDisaster[p.first][p.second]) continue;
                     if (isCellAvailable(p)){
                         toAdd.push_back({p.first,p.second});
                     }
@@ -281,6 +284,10 @@ void EntityFacade::moveEnemy(){
         }
         for (std::pair<int,int> p : toAdd) {
             updateCell({p.first,p.second}, disasterType);
+            hadDisaster[p.first][p.second] = true;
+        }
+        for (std::pair<int,int> p : toRemove) {
+            updateCell({p.first,p.second}, EntityType::EMPTY);
         }
         if (!hasDisaster){
             respawnDisaster();
@@ -389,6 +396,7 @@ void EntityFacade::respawnDisaster(){ // this is used in the rare case the robbe
         for (int j = 0; j < NUM_OF_GRID_COLUMNS; j++){
             if ((i == 0 || j == 0 || i == NUM_OF_GRID_ROWS-1 || j == NUM_OF_GRID_COLUMNS-1) && gridData[i][j].second == EntityType::EMPTY){
                 emptyCellsOnEdgeOfGrid.push_back({i,j});
+                hadDisaster[i][j] = false;
             }
         }
     }
@@ -396,6 +404,7 @@ void EntityFacade::respawnDisaster(){ // this is used in the rare case the robbe
     std::shuffle(emptyCellsOnEdgeOfGrid.begin(), emptyCellsOnEdgeOfGrid.end(),g);
     // there is guaranteed to be >= 1 available cells due to: the budget, cost of the minimum block type, number of persons on the grid, and number of cells on the edge of grid
     updateCell({emptyCellsOnEdgeOfGrid[0]}, disasterType);
+    hadDisaster[emptyCellsOnEdgeOfGrid[0].first][emptyCellsOnEdgeOfGrid[0].second] = true;
 }
 
 bool EntityFacade::gameOver(){ return gameOverStatus; }

@@ -174,7 +174,7 @@ public:
 private:
     inline static std::string moveLoop[10]{"D", "R", "R", "R", "R", "R", "R", "T", "T", "T"}; // D - Disaster Move, R - Robber Move, T - Terrorist Move
     int moveLoopIndex = 0, budget = 100, enemyMoveSpeedInMilliseconds = 500;
-    Disaster *disaster; EntityType disasterType = EntityType::EMPTY; QPixmap disasterPic;
+    Disaster *disaster; EntityType disasterType = EntityType::EMPTY; QPixmap disasterPic; bool hadDisaster[NUM_OF_GRID_ROWS][NUM_OF_GRID_COLUMNS];
     BlockFactory *blockFactory = new BlockFactory(); PersonFactory *personFactory = new PersonFactory(); DisasterFactory *disasterFactory = new DisasterFactory();
     std::pair<void*,EntityType> gridData[NUM_OF_GRID_ROWS][NUM_OF_GRID_COLUMNS];
     Player *player = new Player(); Robber *robber = new Robber(); Terrorist *terrorist = new Terrorist();

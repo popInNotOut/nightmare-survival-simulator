@@ -732,7 +732,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>Enemies spawn randomly on the edge of the map. In the rare case where the robber or terrorist eats up all the disaster cells, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa. If a robber touches you before all blocks are destroyed, he will swap locations instead of attack.</string>
+       <string>Enemies spawn randomly on the edge of the map. When a disaster dies out, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa. If a robber touches you before all blocks are destroyed, he will swap locations instead of attack.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>

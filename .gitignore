@@ -36,3 +36,10 @@ code/build/
 
 # Other files
 code/ProjectTemplate.pro.user
+code/.qmake.stash
+code/.qtc_clangd/
+code/Makefile
+code/Makefile.Debug
+code/Makefile.Release
+code/csv_files/
+code/debug/

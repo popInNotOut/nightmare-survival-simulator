@@ -22,4 +22,8 @@
         <file>img/tutorialPageBackground.jpg</file>
         <file>img/arrowKeys.png</file>
     </qresource>
+    <qresource prefix="/sounds">
+        <file>sounds/mainWindowBackgroundMusic.mp3</file>
+        <file>sounds/buttonClickSound.mp3</file>
+    </qresource>
 </RCC>

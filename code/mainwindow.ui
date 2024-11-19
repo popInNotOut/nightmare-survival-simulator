@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
      <property name="autoFillBackground">
@@ -168,6 +168,48 @@ QWidget#highscoresButton::pressed{
       </property>
       <property name="text">
        <string>End of World Survival Simulator</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="musicLabel">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>20</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#musicLabel{
+	border-width: 3px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	font: 700 11pt &quot;Sitka Display&quot;;
+	qproperty-alignment: AlignCenter;
+}</string>
+      </property>
+      <property name="text">
+       <string>Music</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="musicCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>20</y>
+        <width>41</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+      <property name="tristate">
+       <bool>false</bool>
       </property>
      </widget>
     </widget>

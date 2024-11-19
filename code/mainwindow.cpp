@@ -11,8 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    this->setWindowTitle("Main Menu");
     this->setWindowFlags(this->windowFlags() & ~Qt::WindowMaximizeButtonHint);
     HighscoresSingleton::initDirectories();
+    initMusic(); startBackgroundMusic();
     ui->stackedWidget->setCurrentIndex(0);
 }
 
@@ -139,3 +141,31 @@ void MainWindow::on_tutorialPageBackToMainMenuButton_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+
+void MainWindow::initMusic(){
+    mainWindowBackgroundMediaPlayer = new QMediaPlayer;
+    mainWindowBackgroundAudioOutput = new QAudioOutput;
+    mainWindowBackgroundAudioOutput->setVolume(1.0);
+    mainWindowBackgroundMediaPlayer->setAudioOutput(mainWindowBackgroundAudioOutput);
+    mainWindowBackgroundMediaPlayer->setSource(QUrl("qrc:/sounds/sounds/mainWindowBackgroundMusic.mp3"));
+    mainWindowBackgroundMediaPlayer->setLoops(QMediaPlayer::Infinite);
+}
+
+void MainWindow::startBackgroundMusic(){
+    mainWindowBackgroundMediaPlayer->play();
+}
+
+void MainWindow::stopBackgroundMusic(){
+    mainWindowBackgroundMediaPlayer->stop();
+}
+
+void MainWindow::on_musicCheckBox_stateChanged(int arg1)
+{
+    if (ui->musicCheckBox->isChecked()){
+        startBackgroundMusic();
+    }
+    else {
+        stopBackgroundMusic();
+    }
+}
+

@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMediaPlayer>
+#include <QAudioOutput>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -32,8 +34,13 @@ private slots:
 
     void on_tutorialButton_clicked();
 
+    void on_musicCheckBox_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     void displayHighscores(), displayRunLog();
+    void initMusic(), startBackgroundMusic(), stopBackgroundMusic();
+    QMediaPlayer *mainWindowBackgroundMediaPlayer;
+    QAudioOutput *mainWindowBackgroundAudioOutput;
 };
 #endif // MAINWINDOW_H

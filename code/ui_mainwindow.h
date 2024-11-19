@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QListWidget>
@@ -35,6 +36,8 @@ public:
     QPushButton *tutorialButton;
     QPushButton *highscoresButton;
     QLabel *titleLabel;
+    QLabel *musicLabel;
+    QCheckBox *musicCheckBox;
     QWidget *tutorialPage;
     QPushButton *tutorialPageBackToMainMenuButton;
     QLabel *arrowKeysImageLabel;
@@ -185,6 +188,22 @@ public:
 "	background-color: rgb(230, 230, 230);\n"
 "	font: 18pt \"Snap ITC\";\n"
 "}"));
+        musicLabel = new QLabel(mainMenuPage);
+        musicLabel->setObjectName("musicLabel");
+        musicLabel->setGeometry(QRect(610, 20, 131, 41));
+        musicLabel->setStyleSheet(QString::fromUtf8("QLabel#musicLabel{\n"
+"	border-width: 3px;\n"
+"	border-style: solid;\n"
+"	border-color: black;\n"
+"	background-color: white;\n"
+"	font: 700 11pt \"Sitka Display\";\n"
+"	qproperty-alignment: AlignCenter;\n"
+"}"));
+        musicCheckBox = new QCheckBox(mainMenuPage);
+        musicCheckBox->setObjectName("musicCheckBox");
+        musicCheckBox->setGeometry(QRect(750, 20, 41, 41));
+        musicCheckBox->setChecked(true);
+        musicCheckBox->setTristate(false);
         stackedWidget->addWidget(mainMenuPage);
         tutorialPage = new QWidget();
         tutorialPage->setObjectName("tutorialPage");
@@ -616,7 +635,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -629,6 +648,8 @@ public:
         tutorialButton->setText(QCoreApplication::translate("MainWindow", "Tutorial", nullptr));
         highscoresButton->setText(QCoreApplication::translate("MainWindow", "Highscores", nullptr));
         titleLabel->setText(QCoreApplication::translate("MainWindow", "End of World Survival Simulator", nullptr));
+        musicLabel->setText(QCoreApplication::translate("MainWindow", "Music", nullptr));
+        musicCheckBox->setText(QString());
         tutorialPageBackToMainMenuButton->setText(QCoreApplication::translate("MainWindow", "Back to Main Menu", nullptr));
         arrowKeysImageLabel->setText(QString());
         arrowKeysDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Use arrow keys to move yourself during the simulation phase", nullptr));

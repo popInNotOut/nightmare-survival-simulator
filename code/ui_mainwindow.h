@@ -635,7 +635,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -667,7 +667,7 @@ public:
         tornadoImageLabel->setText(QString());
         playerDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "You must build blocks and then survive for as long as possible in the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 50 seconds is very difficult and is considered a world-class accomplishment.", nullptr));
         robberDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The robber targets the nearest block. If there are no blocks remaining, he will target you. The robber moves more faster than the other enemies and is immune to every entity.", nullptr));
-        moveDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies (Natural disaster, Robber, Terrorist) move independently. The speed of all enemies increases with duration of the simulation. The speed is capped at a few hundred milliseconds but may differ depending on the enemy. At that point, it is very hard to survive because everything moves so fast.", nullptr));
+        moveDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies (Natural disaster, Robber, Terrorist) move independently. The speed of all enemies increases with the duration of the simulation. The speed is capped at a few hundred milliseconds but may differ depending on the enemy. At that point, it is very hard to survive because everything moves so fast.", nullptr));
         terroristDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The terrorist cannot move through blocks but is immune to every other entity. He moves slower than the robber. Furthermore, he only targets you.", nullptr));
         floodDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Each flood cell spreads orthogonally and diagonally. However, it can only destroy grass blocks.", nullptr));
         rigorousTestingDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies spawn randomly on the edge of the map. When a disaster dies out, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa.", nullptr));

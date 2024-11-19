@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
      <property name="autoFillBackground">
@@ -680,7 +680,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>Enemies (Natural disaster, Robber, Terrorist) move independently. The speed of all enemies increases with duration of the simulation. The speed is capped at a few hundred milliseconds but may differ depending on the enemy. At that point, it is very hard to survive because everything moves so fast.</string>
+       <string>Enemies (Natural disaster, Robber, Terrorist) move independently. The speed of all enemies increases with the duration of the simulation. The speed is capped at a few hundred milliseconds but may differ depending on the enemy. At that point, it is very hard to survive because everything moves so fast.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>

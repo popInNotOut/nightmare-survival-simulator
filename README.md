@@ -2,6 +2,6 @@
 - Download Qt Creator
 - Download the zip from the Github page
 - Extract the zip folder
-- Using Qt Creator, open the ProjectTemplate.pro file in the extracted zip folder. This will open up the project
+- Using Qt Creator, click "Open Project" and then select the the ProjectTemplate.pro file in the extracted zip folder
 - Build the project using the default c++ build
 - Compile and execute using the green button at the bottom left

@@ -10,7 +10,6 @@
 // This file uses:
 // - Factory creational pattern (for creating blocks, persons, and disasters)
 // - Facade structural pattern (combining the three subsystems to provide a simple and useful interface for the ui classes to use)
-// - Singleton creational pattern (HighscoresSingleton)
 
 /*******************************************************************************************************
 ************************ Start of Block Objects (Including BlockFactory) *******************************

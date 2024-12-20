@@ -61,6 +61,7 @@ void GameWindow::initGridCellsForBuildingGrid(){
     for (int row = 0; row < gameState->NUM_OF_GRID_ROWS; row++){
         for (int column = 0; column < gameState->NUM_OF_GRID_COLUMNS; column++){
             ui->buildGrid->addWidget(new QPushButton(),row,column);
+            qobject_cast<QPushButton*>(ui->buildGrid->itemAtPosition(row,column)->widget())->setStyleSheet("background-color: white;");
             connect(qobject_cast<QPushButton*>(ui->buildGrid->itemAtPosition(row,column)->widget()), &QPushButton::clicked, [=](){
                 gridButtonClickedEvent(row, column);
             });
@@ -72,6 +73,7 @@ void GameWindow::initGridCellsForSimulationGrid(){
     for (int row = 0; row < gameState->NUM_OF_GRID_ROWS; row++){
         for (int column = 0; column < gameState->NUM_OF_GRID_COLUMNS; column++){
             ui->simulationGrid->addWidget(new QPushButton(),row,column);
+            qobject_cast<QPushButton*>(ui->simulationGrid->itemAtPosition(row,column)->widget())->setStyleSheet("background-color: white;");
             qobject_cast<QPushButton*>(ui->simulationGrid->itemAtPosition(row,column)->widget())->setFocusPolicy(Qt::NoFocus);
         }
     }

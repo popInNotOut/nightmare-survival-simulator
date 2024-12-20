@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
      <property name="autoFillBackground">
@@ -65,7 +65,7 @@
 	border-style: solid;
 	border-color: green;
 	background-color: rgb(170, 255, 127);
-	font: 9px &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	color: black;
 }
 
@@ -74,7 +74,7 @@ QWidget#playGameButton::pressed{
 	border-style: solid;
 	border-color: green;
 	background-color: rgb(0, 255, 0);
-	font: 9px &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	color: black;
 }
 </string>
@@ -100,7 +100,7 @@ QWidget#playGameButton::pressed{
 	border-style: solid;
 	border-color: red;
 	background-color: rgb(255, 170, 127);
-	font: 9px &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	color: black;
 }
 
@@ -109,7 +109,7 @@ QWidget#tutorialButton::pressed{
 	border-style: solid;
 	border-color: red;
 	background-color: rgb(255, 0, 127);
-	font: 9px &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	color: black;
 }</string>
            </property>
@@ -132,7 +132,7 @@ QWidget#tutorialButton::pressed{
 	border-style: solid;
 	border-color: blue;
 	background-color: rgb(170, 170, 255);
-	font: 9px &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	color: black;
 }
 
@@ -141,7 +141,7 @@ QWidget#highscoresButton::pressed{
 	border-style: solid;
 	border-color: blue;
 	background-color: rgb(0, 85, 255);
-	font: 9px &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	color: black;
 }</string>
            </property>
@@ -324,7 +324,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: black;
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -348,7 +348,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: black;
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -398,7 +398,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: black;
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -474,7 +474,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: black;
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -524,7 +524,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: black;
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -574,7 +574,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: black;
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -1005,7 +1005,7 @@ QWidget#highscorePageBackToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 0, 255), stop:0.166 rgba(255, 255, 0, 255), stop:0.333 rgba(0, 255, 0, 255), stop:0.5 rgba(0, 255, 255, 255), stop:0.666 rgba(0, 0, 255, 255), stop:0.833 rgba(255, 0, 255, 255), stop:1 rgba(255, 0, 0, 255));
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -1175,7 +1175,7 @@ QWidget#clearRunLogButton::pressed{
 	border-style: solid;
 	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>

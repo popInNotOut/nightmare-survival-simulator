@@ -153,7 +153,7 @@ QWidget#backToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: rgb(0, 255, 0);
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -171,7 +171,7 @@ QWidget#backToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: rgb(255, 0, 0);
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -359,7 +359,7 @@ QWidget#backToMainMenuButton::pressed{
 	border-style: solid;
 	border-color: rgb(0, 0, 255);
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -564,6 +564,7 @@ QWidget#resetButton::pressed{
 	background-color: white;
 	font: 600 9pt &quot;Segoe UI Semibold&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
           </property>
           <property name="text">
@@ -589,6 +590,7 @@ QWidget#resetButton::pressed{
 	background-color: white;
 	font: 600 9pt &quot;Segoe UI Semibold&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
           </property>
           <property name="text">
@@ -614,6 +616,7 @@ QWidget#resetButton::pressed{
 	background-color: white;
 	font: 600 9pt &quot;Segoe UI Semibold&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
           </property>
           <property name="text">
@@ -639,6 +642,7 @@ QWidget#resetButton::pressed{
 	background-color: white;
 	font: 600 9pt &quot;Segoe UI Semibold&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
           </property>
           <property name="text">
@@ -674,6 +678,7 @@ QWidget#resetButton::pressed{
 	background-color: white;
 	font: 600 14pt &quot;Segoe UI Semibold&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
         </property>
         <property name="text">
@@ -688,6 +693,7 @@ QWidget#resetButton::pressed{
 	background-color: white;
 	font: 600 14pt &quot;Segoe UI Semibold&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
         </property>
         <property name="text">
@@ -775,6 +781,7 @@ QWidget#resetButton::pressed{
 	background-color: white;
 	font: 600 11pt &quot;Segoe UI Semibold&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
      </property>
      <property name="text">
@@ -821,7 +828,7 @@ QWidget#resetButton::pressed{
      <property name="styleSheet">
       <string notr="true">QLabel#gameOverSurvivalTimeLabel{
 	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(245, 224, 176, 255), stop:0.09 rgba(246, 189, 237, 255), stop:0.14 rgba(194, 207, 246, 255), stop:0.19 rgba(184, 160, 168, 255), stop:0.25 rgba(171, 186, 248, 255), stop:0.32 rgba(243, 248, 224, 255), stop:0.385 rgba(249, 162, 183, 255), stop:0.47 rgba(100, 115, 124, 255), stop:0.58 rgba(251, 205, 202, 255), stop:0.65 rgba(170, 128, 185, 255), stop:0.75 rgba(252, 222, 204, 255), stop:0.805 rgba(206, 122, 218, 255), stop:0.86 rgba(254, 223, 175, 255), stop:0.91 rgba(254, 236, 244, 255), stop:1 rgba(255, 191, 221, 255));
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>
@@ -877,7 +884,7 @@ QWidget#gameOverPageBackToMainMenuButton::pressed{
         <property name="styleSheet">
          <string notr="true">QLabel#gameOverDisasterLabel{
 	background-color: white;
-	font: 9pt &quot;8514oem&quot;;
+	font: 700 14pt &quot;Bahnschrift&quot;;
 	qproperty-alignment: AlignCenter;
 	color: black;
 }</string>

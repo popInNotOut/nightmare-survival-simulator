@@ -112,7 +112,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: green;\n"
 "	background-color: rgb(170, 255, 127);\n"
-"	font: 9px \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	color: black;\n"
 "}\n"
 "\n"
@@ -121,7 +121,8 @@ public:
 "	border-style: solid;\n"
 "	border-color: green;\n"
 "	background-color: rgb(0, 255, 0);\n"
-"	font: 9px \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
+"	color: black;\n"
 "}\n"
 ""));
 
@@ -141,7 +142,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: red;\n"
 "	background-color: rgb(255, 170, 127);\n"
-"	font: 9px \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	color: black;\n"
 "}\n"
 "\n"
@@ -150,7 +151,8 @@ public:
 "	border-style: solid;\n"
 "	border-color: red;\n"
 "	background-color: rgb(255, 0, 127);\n"
-"	font: 9px \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
+"	color: black;\n"
 "}"));
 
         verticalLayout_3->addWidget(tutorialButton);
@@ -164,7 +166,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: blue;\n"
 "	background-color: rgb(170, 170, 255);\n"
-"	font: 9px \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	color: black;\n"
 "}\n"
 "\n"
@@ -173,7 +175,8 @@ public:
 "	border-style: solid;\n"
 "	border-color: blue;\n"
 "	background-color: rgb(0, 85, 255);\n"
-"	font: 9px \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
+"	color: black;\n"
 "}"));
 
         verticalLayout_3->addWidget(highscoresButton);
@@ -233,6 +236,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 11pt \"Algerian\";\n"
+"	color: black;\n"
 "}"));
         arrowKeysImageLabel = new QLabel(tutorialPage);
         arrowKeysImageLabel->setObjectName("arrowKeysImageLabel");
@@ -264,7 +268,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -276,7 +280,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -298,7 +302,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -330,7 +334,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -352,7 +356,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -374,7 +378,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: black;\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -567,7 +571,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 0, 0, 255), stop:0.166 rgba(255, 255, 0, 255), stop:0.333 rgba(0, 255, 0, 255), stop:0.5 rgba(0, 255, 255, 255), stop:0.666 rgba(0, 0, 255, 255), stop:0.833 rgba(255, 0, 255, 255), stop:1 rgba(255, 0, 0, 255));\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -658,7 +662,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(255, 178, 102, 255), stop:0.55 rgba(235, 148, 61, 255), stop:0.98 rgba(0, 0, 0, 255), stop:1 rgba(0, 0, 0, 0));\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -667,7 +671,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

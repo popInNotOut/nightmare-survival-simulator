@@ -192,7 +192,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: rgb(0, 255, 0);\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -206,7 +206,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: rgb(255, 0, 0);\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -344,7 +344,7 @@ public:
 "	border-style: solid;\n"
 "	border-color: rgb(0, 0, 255);\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -487,6 +487,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_9->addWidget(playerLabel);
@@ -507,6 +508,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_10->addWidget(robberLabel);
@@ -527,6 +529,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_11->addWidget(terroristLabel);
@@ -547,6 +550,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_12->addWidget(disasterLabel);
@@ -571,6 +575,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 14pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         survivalTimeVerticalLayout->addWidget(survivalTimeDisplayLabel);
@@ -581,6 +586,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 14pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         survivalTimeVerticalLayout->addWidget(survivalTimeLabel);
@@ -608,6 +614,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 11pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         stackedWidget->addWidget(simulationPage);
         gameOverPage = new QWidget();
@@ -629,7 +636,7 @@ public:
         gameOverSurvivalTimeLabel->setGeometry(QRect(40, 150, 911, 71));
         gameOverSurvivalTimeLabel->setStyleSheet(QString::fromUtf8("QLabel#gameOverSurvivalTimeLabel{\n"
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(245, 224, 176, 255), stop:0.09 rgba(246, 189, 237, 255), stop:0.14 rgba(194, 207, 246, 255), stop:0.19 rgba(184, 160, 168, 255), stop:0.25 rgba(171, 186, 248, 255), stop:0.32 rgba(243, 248, 224, 255), stop:0.385 rgba(249, 162, 183, 255), stop:0.47 rgba(100, 115, 124, 255), stop:0.58 rgba(251, 205, 202, 255), stop:0.65 rgba(170, 128, 185, 255), stop:0.75 rgba(252, 222, 204, 255), stop:0.805 rgba(206, 122, 218, 255), stop:0.86 rgba(254, 223, 175, 255), stop:0.91 rgba(254, 236, 244, 255), stop:1 rgba(255, 191, 221, 255));\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));
@@ -663,7 +670,7 @@ public:
         gameOverDisasterLabel->setObjectName("gameOverDisasterLabel");
         gameOverDisasterLabel->setStyleSheet(QString::fromUtf8("QLabel#gameOverDisasterLabel{\n"
 "	background-color: white;\n"
-"	font: 9pt \"8514oem\";\n"
+"	font: 700 14pt \"Bahnschrift\";\n"
 "	qproperty-alignment: AlignCenter;\n"
 "	color: black;\n"
 "}"));

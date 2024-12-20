@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.8.0
+** Created by: Qt User Interface Compiler version 6.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -113,6 +113,7 @@ public:
 "	border-color: green;\n"
 "	background-color: rgb(170, 255, 127);\n"
 "	font: 9px \"8514oem\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#playGameButton::pressed{\n"
@@ -141,6 +142,7 @@ public:
 "	border-color: red;\n"
 "	background-color: rgb(255, 170, 127);\n"
 "	font: 9px \"8514oem\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#tutorialButton::pressed{\n"
@@ -163,6 +165,7 @@ public:
 "	border-color: blue;\n"
 "	background-color: rgb(170, 170, 255);\n"
 "	font: 9px \"8514oem\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#highscoresButton::pressed{\n"
@@ -187,6 +190,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(230, 230, 230);\n"
 "	font: 18pt \"Snap ITC\";\n"
+"	color: black;\n"
 "}"));
         musicLabel = new QLabel(mainMenuPage);
         musicLabel->setObjectName("musicLabel");
@@ -198,6 +202,7 @@ public:
 "	background-color: white;\n"
 "	font: 700 11pt \"Sitka Display\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         musicCheckBox = new QCheckBox(mainMenuPage);
         musicCheckBox->setObjectName("musicCheckBox");
@@ -219,6 +224,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 11pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#tutorialPageBackToMainMenuButton::pressed{\n"
@@ -240,7 +246,7 @@ public:
         arrowKeysImageLabel->setScaledContents(true);
         arrowKeysDescriptionLabel = new QLabel(tutorialPage);
         arrowKeysDescriptionLabel->setObjectName("arrowKeysDescriptionLabel");
-        arrowKeysDescriptionLabel->setGeometry(QRect(70, 20, 481, 51));
+        arrowKeysDescriptionLabel->setGeometry(QRect(70, 20, 501, 51));
         arrowKeysDescriptionLabel->setStyleSheet(QString::fromUtf8("QLabel#arrowKeysDescriptionLabel{\n"
 "	border-width: 3px;\n"
 "	border-style: solid;\n"
@@ -248,6 +254,7 @@ public:
 "	background-color: white;\n"
 "	font: 700 11pt \"Sitka Display\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         playerLabel = new QLabel(tutorialPage);
         playerLabel->setObjectName("playerLabel");
@@ -259,6 +266,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         floodLabel = new QLabel(tutorialPage);
         floodLabel->setObjectName("floodLabel");
@@ -270,6 +278,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         playerImageLabel = new QLabel(tutorialPage);
         playerImageLabel->setObjectName("playerImageLabel");
@@ -291,6 +300,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         robberImageLabel = new QLabel(tutorialPage);
         robberImageLabel->setObjectName("robberImageLabel");
@@ -322,6 +332,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         floodImageLabel = new QLabel(tutorialPage);
         floodImageLabel->setObjectName("floodImageLabel");
@@ -343,6 +354,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         wildfireImageLabel = new QLabel(tutorialPage);
         wildfireImageLabel->setObjectName("wildfireImageLabel");
@@ -364,6 +376,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         tornadoImageLabel = new QLabel(tutorialPage);
         tornadoImageLabel->setObjectName("tornadoImageLabel");
@@ -391,6 +404,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         playerDescriptionLabel->setWordWrap(true);
         robberDescriptionLabel = new QLabel(tutorialPage);
@@ -404,6 +418,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         robberDescriptionLabel->setWordWrap(true);
         moveDescriptionLabel = new QLabel(tutorialPage);
@@ -416,6 +431,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         moveDescriptionLabel->setWordWrap(true);
         terroristDescriptionLabel = new QLabel(tutorialPage);
@@ -429,6 +445,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         terroristDescriptionLabel->setWordWrap(true);
         floodDescriptionLabel = new QLabel(tutorialPage);
@@ -442,6 +459,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         floodDescriptionLabel->setWordWrap(true);
         rigorousTestingDescriptionLabel = new QLabel(tutorialPage);
@@ -454,6 +472,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         rigorousTestingDescriptionLabel->setWordWrap(true);
         wildfireDescriptionLabel = new QLabel(tutorialPage);
@@ -467,6 +486,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         wildfireDescriptionLabel->setWordWrap(true);
         tornadoDescriptionLabel = new QLabel(tutorialPage);
@@ -480,6 +500,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"Titillium Web\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         tornadoDescriptionLabel->setWordWrap(true);
         stackedWidget->addWidget(tutorialPage);
@@ -527,6 +548,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 11pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#highscorePageBackToMainMenuButton::pressed{\n"
@@ -535,6 +557,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 11pt \"Algerian\";\n"
+"	color: black;\n"
 "}"));
         highscoresLabel = new QLabel(highscoresPage);
         highscoresLabel->setObjectName("highscoresLabel");
@@ -546,6 +569,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         highscorePageFloodValueLabel = new QLabel(highscoresPage);
         highscorePageFloodValueLabel->setObjectName("highscorePageFloodValueLabel");
@@ -557,6 +581,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         highscorePageWildfireValueLabel = new QLabel(highscoresPage);
         highscorePageWildfireValueLabel->setObjectName("highscorePageWildfireValueLabel");
@@ -568,6 +593,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         highscorePageTornadoValueLabel = new QLabel(highscoresPage);
         highscorePageTornadoValueLabel->setObjectName("highscorePageTornadoValueLabel");
@@ -579,6 +605,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         clearHighscoresButton = new QPushButton(highscoresPage);
         clearHighscoresButton->setObjectName("clearHighscoresButton");
@@ -589,6 +616,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 600 11pt \"Segoe UI Semibold\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#clearHighscoresButton::pressed{\n"
@@ -597,6 +625,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 600 11pt \"Segoe UI Semibold\";\n"
+"	color: black;\n"
 "}"));
         clearRunLogButton = new QPushButton(highscoresPage);
         clearRunLogButton->setObjectName("clearRunLogButton");
@@ -607,6 +636,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 600 11pt \"Segoe UI Semibold\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#clearRunLogButton::pressed{\n"
@@ -615,6 +645,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 600 11pt \"Segoe UI Semibold\";\n"
+"	color: black;\n"
 "}"));
         runLogListWidget = new QListWidget(highscoresPage);
         runLogListWidget->setObjectName("runLogListWidget");
@@ -629,13 +660,14 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         stackedWidget->addWidget(highscoresPage);
         MainWindow->setCentralWidget(centralwidget);
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(1);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

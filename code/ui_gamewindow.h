@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'gamewindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.8.0
+** Created by: Qt User Interface Compiler version 6.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -138,6 +138,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 25pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#finishButton::pressed{\n"
@@ -146,6 +147,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 25pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 ""));
         backToMainMenuButton = new QPushButton(buildPage);
@@ -157,6 +159,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 15pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#backToMainMenuButton::pressed{\n"
@@ -165,6 +168,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 15pt \"Algerian\";\n"
+"	color: black;\n"
 "}"));
         selectBlocksOuterLabel = new QLabel(buildPage);
         selectBlocksOuterLabel->setObjectName("selectBlocksOuterLabel");
@@ -190,6 +194,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_6->addWidget(placeBlocksLabel);
@@ -203,6 +208,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_6->addWidget(budgetLabel);
@@ -218,6 +224,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout->addWidget(grassLabel);
@@ -243,6 +250,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_3->addWidget(woodLabel);
@@ -268,6 +276,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_4->addWidget(cobblestoneLabel);
@@ -293,6 +302,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 9pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_5->addWidget(concreteLabel);
@@ -336,6 +346,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         disasterVerticalLayout->addWidget(selectDisasterLabel);
@@ -348,6 +359,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 15pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_2->addWidget(floodLabel);
@@ -380,6 +392,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 14pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_7->addWidget(wildfireLabel);
@@ -407,6 +420,7 @@ public:
 "	background-color: white;\n"
 "	font: 600 14pt \"Segoe UI Semibold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         horizontalLayout_8->addWidget(tornadoLabel);
@@ -435,6 +449,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 25pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#resetButton::pressed{\n"
@@ -443,6 +458,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 25pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 ""));
         stackedWidget->addWidget(buildPage);
@@ -606,6 +622,7 @@ public:
 "	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0.735577 rgba(255, 255, 0, 255), stop:0.927885 rgba(255, 0, 0, 255), stop:0.995192 rgba(0, 0, 0, 255));\n"
 "	font: 26pt \"Tw Cen MT Condensed Extra Bold\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         gameOverSurvivalTimeLabel = new QLabel(gameOverPage);
         gameOverSurvivalTimeLabel->setObjectName("gameOverSurvivalTimeLabel");
@@ -614,6 +631,7 @@ public:
 "	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(245, 224, 176, 255), stop:0.09 rgba(246, 189, 237, 255), stop:0.14 rgba(194, 207, 246, 255), stop:0.19 rgba(184, 160, 168, 255), stop:0.25 rgba(171, 186, 248, 255), stop:0.32 rgba(243, 248, 224, 255), stop:0.385 rgba(249, 162, 183, 255), stop:0.47 rgba(100, 115, 124, 255), stop:0.58 rgba(251, 205, 202, 255), stop:0.65 rgba(170, 128, 185, 255), stop:0.75 rgba(252, 222, 204, 255), stop:0.805 rgba(206, 122, 218, 255), stop:0.86 rgba(254, 223, 175, 255), stop:0.91 rgba(254, 236, 244, 255), stop:1 rgba(255, 191, 221, 255));\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
         gameOverPageBackToMainMenuButton = new QPushButton(gameOverPage);
         gameOverPageBackToMainMenuButton->setObjectName("gameOverPageBackToMainMenuButton");
@@ -624,6 +642,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(225, 225, 225);\n"
 "	font: 15pt \"Algerian\";\n"
+"	color: black;\n"
 "}\n"
 "\n"
 "QWidget#gameOverPageBackToMainMenuButton::pressed{\n"
@@ -632,6 +651,7 @@ public:
 "	border-color: black;\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	font: 15pt \"Algerian\";\n"
+"	color: black;\n"
 "}"));
         horizontalLayoutWidget = new QWidget(gameOverPage);
         horizontalLayoutWidget->setObjectName("horizontalLayoutWidget");
@@ -645,6 +665,7 @@ public:
 "	background-color: white;\n"
 "	font: 9pt \"8514oem\";\n"
 "	qproperty-alignment: AlignCenter;\n"
+"	color: black;\n"
 "}"));
 
         gameOverDisasterTypeHorizontalLayout->addWidget(gameOverDisasterLabel);
@@ -671,27 +692,27 @@ public:
         budgetLabel->setText(QCoreApplication::translate("GameWindow", "(Show Budget)", nullptr));
         grassLabel->setText(QCoreApplication::translate("GameWindow", "Grass ($2)", nullptr));
         grassImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
-        grassCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
+        grassCheckBox->setText(QString());
         woodLabel->setText(QCoreApplication::translate("GameWindow", "Wood ($3)", nullptr));
         woodImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
-        woodCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
+        woodCheckBox->setText(QString());
         cobblestoneLabel->setText(QCoreApplication::translate("GameWindow", "Cobblestone ($5)", nullptr));
         cobblestoneImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
-        cobblestoneCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
+        cobblestoneCheckBox->setText(QString());
         concreteLabel->setText(QCoreApplication::translate("GameWindow", "Concrete ($7)", nullptr));
         concreteImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
-        concreteCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
-        selectDisasterOuterLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
+        concreteCheckBox->setText(QString());
+        selectDisasterOuterLabel->setText(QString());
         selectDisasterLabel->setText(QCoreApplication::translate("GameWindow", "Select Disaster", nullptr));
         floodLabel->setText(QCoreApplication::translate("GameWindow", "Flood", nullptr));
         floodImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
-        floodCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
+        floodCheckBox->setText(QString());
         wildfireLabel->setText(QCoreApplication::translate("GameWindow", "Wildfire", nullptr));
         wildfireImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
-        wildfireCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
+        wildfireCheckBox->setText(QString());
         tornadoLabel->setText(QCoreApplication::translate("GameWindow", "Tornado", nullptr));
         tornadoImageLabel->setText(QCoreApplication::translate("GameWindow", "TextLabel", nullptr));
-        tornadoCheckBox->setText(QCoreApplication::translate("GameWindow", "CheckBox", nullptr));
+        tornadoCheckBox->setText(QString());
         resetButton->setText(QCoreApplication::translate("GameWindow", "RESET", nullptr));
         playerLabel->setText(QCoreApplication::translate("GameWindow", "Player", nullptr));
         playerImageLabel->setText(QString());

@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
      <property name="autoFillBackground">
@@ -66,6 +66,7 @@
 	border-color: green;
 	background-color: rgb(170, 255, 127);
 	font: 9px &quot;8514oem&quot;;
+	color: black;
 }
 
 QWidget#playGameButton::pressed{
@@ -74,6 +75,7 @@ QWidget#playGameButton::pressed{
 	border-color: green;
 	background-color: rgb(0, 255, 0);
 	font: 9px &quot;8514oem&quot;;
+	color: black;
 }
 </string>
          </property>
@@ -99,6 +101,7 @@ QWidget#playGameButton::pressed{
 	border-color: red;
 	background-color: rgb(255, 170, 127);
 	font: 9px &quot;8514oem&quot;;
+	color: black;
 }
 
 QWidget#tutorialButton::pressed{
@@ -107,6 +110,7 @@ QWidget#tutorialButton::pressed{
 	border-color: red;
 	background-color: rgb(255, 0, 127);
 	font: 9px &quot;8514oem&quot;;
+	color: black;
 }</string>
            </property>
            <property name="text">
@@ -129,6 +133,7 @@ QWidget#tutorialButton::pressed{
 	border-color: blue;
 	background-color: rgb(170, 170, 255);
 	font: 9px &quot;8514oem&quot;;
+	color: black;
 }
 
 QWidget#highscoresButton::pressed{
@@ -137,6 +142,7 @@ QWidget#highscoresButton::pressed{
 	border-color: blue;
 	background-color: rgb(0, 85, 255);
 	font: 9px &quot;8514oem&quot;;
+	color: black;
 }</string>
            </property>
            <property name="text">
@@ -164,6 +170,7 @@ QWidget#highscoresButton::pressed{
 	border-color: black;
 	background-color: rgb(230, 230, 230);
 	font: 18pt &quot;Snap ITC&quot;;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -187,6 +194,7 @@ QWidget#highscoresButton::pressed{
 	background-color: white;
 	font: 700 11pt &quot;Sitka Display&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -235,6 +243,7 @@ QWidget#highscoresButton::pressed{
 	border-color: black;
 	background-color: rgb(225, 225, 225);
 	font: 11pt &quot;Algerian&quot;;
+	color: black;
 }
 
 QWidget#tutorialPageBackToMainMenuButton::pressed{
@@ -243,6 +252,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-color: black;
 	background-color: rgb(182, 182, 182);
 	font: 11pt &quot;Algerian&quot;;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -280,7 +290,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
        <rect>
         <x>70</x>
         <y>20</y>
-        <width>481</width>
+        <width>501</width>
         <height>51</height>
        </rect>
       </property>
@@ -292,6 +302,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 700 11pt &quot;Sitka Display&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -315,6 +326,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -338,6 +350,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -387,6 +400,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -462,6 +476,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -511,6 +526,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -560,6 +576,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -617,6 +634,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -651,6 +669,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -677,6 +696,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -711,6 +731,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -745,6 +766,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -771,6 +793,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -805,6 +828,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -839,6 +863,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;Titillium Web&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -949,6 +974,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 	border-color: black;
 	background-color: rgb(225, 225, 225);
 	font: 11pt &quot;Algerian&quot;;
+	color: black;
 }
 
 QWidget#highscorePageBackToMainMenuButton::pressed{
@@ -957,6 +983,7 @@ QWidget#highscorePageBackToMainMenuButton::pressed{
 	border-color: black;
 	background-color: rgb(182, 182, 182);
 	font: 11pt &quot;Algerian&quot;;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -980,6 +1007,7 @@ QWidget#highscorePageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -1003,6 +1031,7 @@ QWidget#highscorePageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -1026,6 +1055,7 @@ QWidget#highscorePageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -1049,6 +1079,7 @@ QWidget#highscorePageBackToMainMenuButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -1071,6 +1102,7 @@ QWidget#highscorePageBackToMainMenuButton::pressed{
 	border-color: black;
 	background-color: rgb(225, 225, 225);
 	font: 600 11pt &quot;Segoe UI Semibold&quot;;
+	color: black;
 }
 
 QWidget#clearHighscoresButton::pressed{
@@ -1079,6 +1111,7 @@ QWidget#clearHighscoresButton::pressed{
 	border-color: black;
 	background-color: rgb(182, 182, 182);
 	font: 600 11pt &quot;Segoe UI Semibold&quot;;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -1101,6 +1134,7 @@ QWidget#clearHighscoresButton::pressed{
 	border-color: black;
 	background-color: rgb(225, 225, 225);
 	font: 600 11pt &quot;Segoe UI Semibold&quot;;
+	color: black;
 }
 
 QWidget#clearRunLogButton::pressed{
@@ -1109,6 +1143,7 @@ QWidget#clearRunLogButton::pressed{
 	border-color: black;
 	background-color: rgb(182, 182, 182);
 	font: 600 11pt &quot;Segoe UI Semibold&quot;;
+	color: black;
 }</string>
       </property>
       <property name="text">
@@ -1142,6 +1177,7 @@ QWidget#clearRunLogButton::pressed{
 	background-color: white;
 	font: 9pt &quot;8514oem&quot;;
 	qproperty-alignment: AlignCenter;
+	color: black;
 }</string>
       </property>
       <property name="text">

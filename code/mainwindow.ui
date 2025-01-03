@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
      <property name="autoFillBackground">
@@ -306,7 +306,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>Use arrow keys to move yourself during the simulation phase</string>
+       <string>Use arrow keys to move yourself in game</string>
       </property>
      </widget>
      <widget class="QLabel" name="playerLabel">
@@ -638,7 +638,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>You must build blocks and then survive for as long as possible in the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 50 seconds is very difficult and is considered a world-class accomplishment.</string>
+       <string>The goal is to survive as long as possible. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 50 seconds is very difficult and is considered a world-class accomplishment.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -673,7 +673,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>The robber targets the nearest block. If there are no blocks remaining, he will target you. The robber moves more faster than the other enemies and is immune to every entity.</string>
+       <string>The robber targets the nearest block, and will target you if there's no more blocks remaining. The robber moves more faster than the other enemies.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -735,7 +735,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>The terrorist cannot move through blocks but is immune to every other entity. He moves slower than the robber. Furthermore, he only targets you.</string>
+       <string>Unlike the robber, the terrorist cannot move through blocks. He moves slower than the robber and only targets you.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -797,7 +797,7 @@ QWidget#tutorialPageBackToMainMenuButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>Enemies spawn randomly on the edge of the map. When a disaster dies out, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa.</string>
+       <string>Enemies spawn randomly on the edge of the map. When a disaster dies out, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa. Both robber and terrorist are immune to disasters.</string>
       </property>
       <property name="wordWrap">
        <bool>true</bool>

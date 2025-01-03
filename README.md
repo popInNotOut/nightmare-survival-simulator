@@ -5,4 +5,4 @@
 
 ## Disclaimer
 - Your operating system must be able to run exe files in order for the game to load
-- Your antivirus might prevent you from running the game. You need to let it run regardless of what your antivirus tells you.
+- Your antivirus might prevent you from running the game. You need to let it run regardless of what your antivirus tells you

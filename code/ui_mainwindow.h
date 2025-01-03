@@ -671,7 +671,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        stackedWidget->setCurrentIndex(2);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -688,7 +688,7 @@ public:
         musicCheckBox->setText(QString());
         tutorialPageBackToMainMenuButton->setText(QCoreApplication::translate("MainWindow", "Back to Main Menu", nullptr));
         arrowKeysImageLabel->setText(QString());
-        arrowKeysDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Use arrow keys to move yourself during the simulation phase", nullptr));
+        arrowKeysDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Use arrow keys to move yourself after the game starts", nullptr));
         playerLabel->setText(QCoreApplication::translate("MainWindow", "Player (You)", nullptr));
         floodLabel->setText(QCoreApplication::translate("MainWindow", "Flood", nullptr));
         playerImageLabel->setText(QString());
@@ -701,12 +701,12 @@ public:
         wildfireImageLabel->setText(QString());
         tornadoLabel->setText(QCoreApplication::translate("MainWindow", "Tornado", nullptr));
         tornadoImageLabel->setText(QString());
-        playerDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "You must build blocks and then survive for as long as possible in the simulation. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 50 seconds is very difficult and is considered a world-class accomplishment.", nullptr));
-        robberDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The robber targets the nearest block. If there are no blocks remaining, he will target you. The robber moves more faster than the other enemies and is immune to every entity.", nullptr));
+        playerDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The goal is to survive as long as possible. You will die if you touch a robber, terrorist, or natural disaster. Surviving more than 50 seconds is very difficult and is considered a world-class accomplishment.", nullptr));
+        robberDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The robber targets the nearest block. If there's no blocks remaining, then he targets you. The robber moves more faster than the other enemies.", nullptr));
         moveDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies (Natural disaster, Robber, Terrorist) move independently. The speed of all enemies increases with the duration of the simulation. The speed is capped at a few hundred milliseconds but may differ depending on the enemy. At that point, it is very hard to survive because everything moves so fast.", nullptr));
-        terroristDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "The terrorist cannot move through blocks but is immune to every other entity. He moves slower than the robber. Furthermore, he only targets you.", nullptr));
+        terroristDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Unlike the robber, the terrorist cannot destroy blocks. He moves slower than the robber and only  targets you.", nullptr));
         floodDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Each flood cell spreads orthogonally and diagonally. However, it can only destroy grass blocks.", nullptr));
-        rigorousTestingDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies spawn randomly on the edge of the map. When a disaster dies out, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa.", nullptr));
+        rigorousTestingDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Enemies spawn randomly on the edge of the map. When a disaster dies out, a new disaster of the same type will spawn on the edge of the map. A robber is guaranteed to never attack a terrorist and vice versa. Both robber and terrorist are immune to disasters.", nullptr));
         wildfireDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Each wildfire cell spreads orthogonally. It can destroy grass and wood blocks.", nullptr));
         tornadoDescriptionLabel->setText(QCoreApplication::translate("MainWindow", "Each tornado cell spreads diagonally. It can destroy grass, wood, and cobblestone blocks.", nullptr));
         highscorePageFloodLabel->setText(QString());

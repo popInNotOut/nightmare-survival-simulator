@@ -1,7 +1,5 @@
-## Compilation and Execution instructions
-- Download Qt Creator
-- Download the zip from the Github page
-- Extract the zip folder
-- Using Qt Creator, open the ProjectTemplate.pro file in the extracted zip folder. This will open up the project
-- Build the project using the default c++ build
-- Compile and execute using the green button at the bottom left
+## How to run the game
+- Download the zip folder from GitHub
+- Click on the downloaded zip folder to go inside it. Then go inside the "executables" folder and double click on "ProjectTemplate.exe"
+
+## Disclaimer: Your operating system must be able to run exe files in order for the game to load

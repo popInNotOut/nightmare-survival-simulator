@@ -27,7 +27,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="mainMenuPage">
      <property name="autoFillBackground">
@@ -159,7 +159,7 @@ QWidget#highscoresButton::pressed{
        <rect>
         <x>30</x>
         <y>30</y>
-        <width>481</width>
+        <width>441</width>
         <height>81</height>
        </rect>
       </property>
@@ -174,7 +174,7 @@ QWidget#highscoresButton::pressed{
 }</string>
       </property>
       <property name="text">
-       <string>End of World Survival Simulator</string>
+       <string>Nightmare survival simulator</string>
       </property>
      </widget>
      <widget class="QLabel" name="musicLabel">

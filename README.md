@@ -9,10 +9,10 @@
 
 **3.** Click on the extracted folder to go inside it. Then go inside the "executables" folder and double click on "ProjectTemplate.exe"
 
-![extractedFolderClick1](https://github.com/user-attachments/assets/989fc709-3d8e-4313-9c34-10ce4d0159d1)
-![extractedFolderClick2](https://github.com/user-attachments/assets/96f693de-377e-4d1f-9f02-36729962af59)
-![extractedFolderClick3](https://github.com/user-attachments/assets/10d9d765-ea54-4341-9c7b-7d7150f1726c)
-![extractedFolderClick4](https://github.com/user-attachments/assets/48344f7a-7ba7-4140-8c58-0240eaa099c0)
+![extractedFolderClick1](https://github.com/user-attachments/assets/ed06bdca-e2cf-4057-87b2-5ef348297c7c)
+![extractedFolderClick2](https://github.com/user-attachments/assets/969e76dd-d8e1-433d-832a-35a930b9e459)
+![extractedFolderClick3](https://github.com/user-attachments/assets/ccb82351-9736-45f7-b20d-326f24cbacce)
+![extractedFolderClick4](https://github.com/user-attachments/assets/ffdba943-bbf9-484d-8328-50732fb026eb)
 
 
 ## Disclaimer

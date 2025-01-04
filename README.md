@@ -1,12 +1,19 @@
+# Gameplay
+https://github.com/user-attachments/assets/aa026fc4-4e6c-4a4e-b625-6b69939f1517
+
+<br /><br /><br /><br /><br />
+
 ## How to run the game
 **1.** Download the zip folder from GitHub
 
 ![zipFolderDownload](https://github.com/user-attachments/assets/a7b0bbdf-3b59-4405-813d-85440b5019ea)
+
 <br /><br /><br />
 
 **2.** Right click on the zip folder and click "Extract All". Extract it in any location you want
 
 ![extractZipFolder](https://github.com/user-attachments/assets/f148fd89-a828-4a60-82bd-474fca4b6ae1)
+
 <br /><br /><br />
 
 
@@ -16,11 +23,10 @@
 ![extractedFolderClick2](https://github.com/user-attachments/assets/969e76dd-d8e1-433d-832a-35a930b9e459)
 ![extractedFolderClick3](https://github.com/user-attachments/assets/ccb82351-9736-45f7-b20d-326f24cbacce)
 ![extractedFolderClick4](https://github.com/user-attachments/assets/ffdba943-bbf9-484d-8328-50732fb026eb)
+
 <br /><br /><br /><br /><br /><br />
 
 
-
-
-## Disclaimer
+### Disclaimer
 - Your operating system must be able to run exe files in order for the game to load
 - Your antivirus might prevent you from running the game. You need to let it run regardless of what your antivirus tells you

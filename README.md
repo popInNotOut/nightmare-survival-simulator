@@ -1,7 +1,7 @@
 # Gameplay
 https://youtu.be/75kpoI6Gbng
 
-<br /><br /><br /><br /><br />
+<br /><br /><br />
 
 ## How to run the game
 **1.** Download the zip folder from GitHub

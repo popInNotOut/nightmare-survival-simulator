@@ -8,13 +8,13 @@ https://github.com/user-attachments/assets/b306b8b3-a3f2-42d4-9902-2e64cf3e9c4a
 
 ![zipFolderDownload](https://github.com/user-attachments/assets/a7b0bbdf-3b59-4405-813d-85440b5019ea)
 
-<br /><br /><br />
+<br /><br />
 
 **2.** Right click on the zip folder and click "Extract All". Extract it in any location you want
 
 ![extractZipFolder](https://github.com/user-attachments/assets/f148fd89-a828-4a60-82bd-474fca4b6ae1)
 
-<br /><br /><br />
+<br /><br />
 
 
 **3.** Click on the extracted folder to go inside it. Then go inside the "executables" folder and double click on "ProjectTemplate.exe"
